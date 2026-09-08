@@ -17920,3 +17920,458 @@ body.djep-force-mobile-shell.djep-homepage-ready
   display: block !important;
   grid-template-columns: 1fr !important;
 }
+
+/* ============================================================================
+   AVELLA — LEGACY PUBLIC LOGIN + E-SIGNATURE BRANDING
+   Keeps DJEP's native authentication / signature functionality intact while
+   replacing the dated wrapper UI around it.
+   ============================================================================ */
+
+body.avella-site-logon-ready,
+body.avella-esignature-ready {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(180deg, #f4f4f5 0%, #ececee 100%) !important;
+  color: #111111 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+}
+
+body.avella-site-logon-ready *,
+body.avella-esignature-ready * {
+  box-sizing: border-box;
+}
+
+body.avella-site-logon-ready .avella-legacy-standalone-logo,
+body.avella-esignature-ready .avella-legacy-standalone-logo {
+  display: none !important;
+}
+
+.avella-public-masthead {
+  width: min(1120px, 100%) !important;
+  min-height: 112px !important;
+  margin: 0 auto 28px !important;
+  padding: 28px 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(135deg, #050505 0%, #1b1b1b 100%) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.10) !important;
+}
+
+.avella-public-masthead__logo {
+  display: block !important;
+  width: 220px !important;
+  max-width: 62vw !important;
+  height: auto !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+/* ------------------------------ LOGIN PAGE ------------------------------ */
+
+body.avella-site-logon-ready {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+body.avella-site-logon-ready .avella-login-card-host {
+  width: min(480px, 100%) !important;
+  margin: 18px auto 0 !important;
+  padding: 30px !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: 24px !important;
+  background: #ffffff !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.08) !important;
+}
+
+body.avella-site-logon-ready .avella-login-intro {
+  margin: 0 0 22px !important;
+  text-align: left !important;
+}
+
+body.avella-site-logon-ready .avella-login-kicker {
+  margin: 0 0 7px !important;
+  color: #71717a !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+body.avella-site-logon-ready .avella-login-title {
+  margin: 0 !important;
+  color: #111111 !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 32px !important;
+  line-height: 1.08 !important;
+  font-weight: 700 !important;
+  letter-spacing: -.02em !important;
+}
+
+body.avella-site-logon-ready .avella-login-copy {
+  margin: 10px 0 0 !important;
+  color: #71717a !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+body.avella-site-logon-ready .avella-login-table {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 11px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.avella-site-logon-ready .avella-login-table td,
+body.avella-site-logon-ready .avella-login-table th {
+  border: 0 !important;
+  background: transparent !important;
+  color: #3f3f46 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  vertical-align: middle !important;
+}
+
+body.avella-site-logon-ready .avella-login-table td:first-child {
+  width: 108px !important;
+  padding-right: 14px !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+body.avella-site-logon-ready .avella-login-legacy-title-row,
+body.avella-site-logon-ready .avella-login-legacy-title {
+  display: none !important;
+}
+
+body.avella-site-logon-ready .avella-login-input {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 48px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border: 1px solid #d4d4d8 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color .15s ease, box-shadow .15s ease !important;
+}
+
+body.avella-site-logon-ready .avella-login-input:focus {
+  border-color: #111111 !important;
+  box-shadow: 0 0 0 4px rgba(17,17,17,.08) !important;
+}
+
+body.avella-site-logon-ready .avella-login-submit {
+  min-width: 170px !important;
+  min-height: 46px !important;
+  margin: 7px auto 0 !important;
+  padding: 12px 24px !important;
+  border: 1px solid #111111 !important;
+  border-radius: 999px !important;
+  background: #111111 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12) !important;
+}
+
+body.avella-site-logon-ready .avella-login-remember {
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 7px 0 0 !important;
+  vertical-align: middle !important;
+  accent-color: #111111 !important;
+}
+
+body.avella-site-logon-ready .avella-login-forgot {
+  color: #52525b !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* --------------------------- DOCUMENT / E-SIGN --------------------------- */
+
+body.avella-esignature-ready {
+  display: block !important;
+}
+
+body.avella-esignature-ready .avella-legacy-document-shell {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  margin: 0 auto 18px !important;
+  border: 1px solid #dedee2 !important;
+  border-radius: 22px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.07) !important;
+}
+
+body.avella-esignature-ready .avella-document-title-row > td,
+body.avella-esignature-ready .avella-document-title-row > th {
+  padding: 15px 18px !important;
+  border: 0 !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+body.avella-esignature-ready .avella-document-legacy-title {
+  color: #ffffff !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: .01em !important;
+}
+
+body.avella-esignature-ready .avella-document-print-button {
+  min-height: 36px !important;
+  padding: 9px 16px !important;
+  border: 1px solid rgba(255,255,255,.70) !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+
+body.avella-esignature-ready .avella-esign-card {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  margin: 18px auto 32px !important;
+  border: 1px solid #dedee2 !important;
+  border-radius: 22px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.07) !important;
+}
+
+body.avella-esignature-ready .avella-esign-title-row > td,
+body.avella-esignature-ready .avella-esign-title-row > th,
+body.avella-esignature-ready .avella-esign-title {
+  padding: 18px 22px !important;
+  border: 0 !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+}
+
+body.avella-esignature-ready .avella-esign-card td,
+body.avella-esignature-ready .avella-esign-card th {
+  color: #3f3f46 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+body.avella-esignature-ready .avella-esign-field-row > td,
+body.avella-esignature-ready .avella-esign-field-row > th {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+body.avella-esignature-ready .avella-esign-input {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border: 1px solid #d4d4d8 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body.avella-esignature-ready .avella-esign-input:focus {
+  border-color: #111111 !important;
+  box-shadow: 0 0 0 4px rgba(17,17,17,.08) !important;
+}
+
+body.avella-esignature-ready .avella-esign-consent-row > td,
+body.avella-esignature-ready .avella-esign-consent-row > th {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  background: #f7f7f8 !important;
+  color: #3f3f46 !important;
+  font-style: normal !important;
+}
+
+body.avella-esignature-ready .avella-esign-checkbox {
+  width: 21px !important;
+  height: 21px !important;
+  margin: 0 10px 0 0 !important;
+  vertical-align: middle !important;
+  accent-color: #111111 !important;
+}
+
+body.avella-esignature-ready .avella-esign-submit-row > td,
+body.avella-esignature-ready .avella-esign-submit-row > th {
+  padding-top: 18px !important;
+  padding-bottom: 22px !important;
+  text-align: center !important;
+}
+
+body.avella-esignature-ready .avella-esign-submit {
+  min-width: 180px !important;
+  min-height: 46px !important;
+  padding: 12px 24px !important;
+  border: 1px solid #111111 !important;
+  border-radius: 999px !important;
+  background: #111111 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12) !important;
+}
+
+@media (max-width: 700px) {
+  body.avella-site-logon-ready,
+  body.avella-esignature-ready {
+    padding: 12px !important;
+  }
+
+  .avella-public-masthead {
+    min-height: 92px !important;
+    margin-bottom: 16px !important;
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .avella-public-masthead__logo {
+    width: 190px !important;
+    max-width: 70vw !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-card-host {
+    margin-top: 6px !important;
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-title {
+    font-size: 29px !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-table,
+  body.avella-site-logon-ready .avella-login-table tbody,
+  body.avella-site-logon-ready .avella-login-table tr,
+  body.avella-site-logon-ready .avella-login-table td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-table tr {
+    margin-bottom: 12px !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-table td:first-child {
+    width: 100% !important;
+    padding: 0 0 6px !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-table td:last-child {
+    padding: 0 !important;
+  }
+
+  body.avella-site-logon-ready .avella-login-submit {
+    width: 100% !important;
+  }
+
+  body.avella-esignature-ready .avella-legacy-document-shell,
+  body.avella-esignature-ready .avella-esign-card {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 18px !important;
+  }
+
+  body.avella-esignature-ready .avella-document-title-row > td,
+  body.avella-esignature-ready .avella-document-title-row > th {
+    padding: 12px 14px !important;
+  }
+
+  body.avella-esignature-ready .avella-document-print-button {
+    padding: 8px 12px !important;
+    font-size: 10px !important;
+  }
+
+  body.avella-esignature-ready .avella-esign-card,
+  body.avella-esignature-ready .avella-esign-card tbody,
+  body.avella-esignature-ready .avella-esign-card tr {
+    max-width: 100% !important;
+  }
+
+  body.avella-esignature-ready .avella-esign-field-row > td,
+  body.avella-esignature-ready .avella-esign-field-row > th {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body.avella-esignature-ready .avella-esign-consent-row > td,
+  body.avella-esignature-ready .avella-esign-consent-row > th {
+    padding: 14px !important;
+  }
+
+  body.avella-esignature-ready .avella-esign-submit {
+    width: calc(100% - 28px) !important;
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+  }
+}
+
