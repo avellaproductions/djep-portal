@@ -17684,3 +17684,114 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-checkout-fee-note strong 
   }
 }
 
+
+
+/* ============================================================================
+   AVELLA — PERMANENT VENMO / ZELLE OPTIONS
+   These do not depend on DJ Event Planner gateway settings.
+   ============================================================================ */
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlinks--avella {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--avella {
+  min-height: 82px !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  padding: 16px 18px !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+body.djep-paymentpage-ready #page_paypal a.djep-payment-altlink--avella {
+  cursor: pointer !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altcard--zelle {
+  cursor: default !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altcard--zelle:hover {
+  transform: none !important;
+  border-color: var(--djep-border) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
+  box-shadow: 0 8px 18px rgba(17, 26, 46, 0.05) !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-alt-static-intro {
+  margin: 0 0 14px !important;
+  color: #5f5f5f !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-alt-static-note {
+  margin: 16px 0 0 !important;
+  padding-top: 15px !important;
+  border-top: 1px solid #e3e3e3 !important;
+  color: #5f5f5f !important;
+  font-size: 12.5px !important;
+  line-height: 1.6 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-alt-static-note strong {
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--avella .djep-payment-altlink-copy {
+  display: block !important;
+  margin-top: 1px !important;
+  color: #6a6a6a !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment-altlinks--avella {
+  grid-template-columns: 1fr !important;
+}
+
+@media (max-width: 767px) {
+  body.djep-paymentpage-ready #page_paypal .djep-payment-altlinks--avella {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--avella {
+    min-height: 74px !important;
+  }
+}
+
+
+
+/* Avella alternate-payment label spacing */
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--avella .djep-payment-altlink-label {
+  display: inline-block !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--avella .djep-payment-altlink-copy {
+  display: inline-block !important;
+  margin-left: 6px !important;
+  margin-top: 0 !important;
+}
+
+
+
+/* =========================================================================
+   AVELLA — VENMO / ZELLE INLINE LABELS
+   ========================================================================= */
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altline {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altline .djep-payment-altlink-label,
+body.djep-paymentpage-ready #page_paypal .djep-payment-altline .djep-payment-altlink-copy {
+  display: inline-block !important;
+  margin: 0 !important;
+}
