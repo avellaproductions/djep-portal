@@ -17795,3 +17795,104 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-altline .djep-payment-alt
   display: inline-block !important;
   margin: 0 !important;
 }
+
+
+/* ============================================================================
+   AVELLA — PENDING CLIENT / RETAINER EXPERIENCE
+   ============================================================================ */
+
+/* Pending clients don't need the post-booking milestone cards yet. */
+body.djep-homepage-ready .portal-welcome.is-pending-client .checklist-panel {
+  display: none !important;
+}
+
+body.djep-homepage-ready .portal-welcome.is-pending-client .welcome-hero {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body.djep-homepage-ready .portal-welcome.is-pending-client .welcome-copy {
+  width: min(100%, 720px) !important;
+  max-width: 720px !important;
+}
+
+body.djep-homepage-ready .djep-home-event-meta-item.is-retainer-meta {
+  border-color: #bdbdbd !important;
+  background: #111111 !important;
+}
+
+body.djep-homepage-ready .djep-home-event-meta-item.is-retainer-meta,
+body.djep-homepage-ready .djep-home-event-meta-item.is-retainer-meta * {
+  color: #ffffff !important;
+}
+
+/* Event Details: clear minimum payment callout for Pending events. */
+body .djep-eventdetails-retainer-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 16px 0 0;
+  padding: 15px 16px;
+  border: 1px solid #d8d8d8;
+  border-left: 4px solid #111111;
+  border-radius: 14px;
+  background: #f7f7f7;
+}
+
+body .djep-eventdetails-retainer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+body .djep-eventdetails-retainer-label {
+  color: #111111;
+  font-family: var(--djep-font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+body .djep-eventdetails-retainer-note {
+  color: #6b6b6b;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+body .djep-eventdetails-retainer-amount {
+  color: #111111;
+  font-family: var(--djep-font-heading);
+  font-size: 21px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Make Payment: when the event is Pending, the immediate amount due is the
+   remaining Retainer, not the full unpaid event balance. */
+body.djep-paymentpage-ready #page_paypal.djep-retainer-payment-ready
+  .djep-payment-summary-card,
+body.djep-paymentpage-ready #page_paypal.djep-retainer-payment-ready
+  .djep-payment-summary-panel {
+  border-color: #cfcfcf !important;
+}
+
+body.djep-paymentpage-ready #page_paypal.djep-retainer-payment-ready
+  .djep-payment-summary-card .djep-payment-balance-value,
+body.djep-paymentpage-ready #page_paypal.djep-retainer-payment-ready
+  .djep-payment-summary-panel .djep-payment-balance-value {
+  color: #111111 !important;
+}
+
+@media (max-width: 640px) {
+  body .djep-eventdetails-retainer-callout {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  body .djep-eventdetails-retainer-amount {
+    font-size: 19px;
+  }
+}
