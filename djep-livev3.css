@@ -17420,15 +17420,17 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
   --djep-nav-text: #f5f5f5;
 }
 
-/* Black Avella logo artwork stays legible on a clean white desktop masthead. */
+/* Avella masthead — black anchor at the top of the portal. */
 #djep-header {
-  background: #ffffff !important;
-  border-color: #e2e2e2 !important;
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08) !important;
+  background: linear-gradient(135deg, #050505 0%, #171717 100%) !important;
+  border-color: #222222 !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18) !important;
 }
 
 #djep-header img {
-  filter: none !important;
+  /* Existing Avella artwork is black/transparent; render it white on black. */
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.98 !important;
 }
 
 /* Neutral brand accents. */
@@ -17583,6 +17585,102 @@ body.djep-contactpage-ready .djep-contact-info-item[data-djep-contact-kind="mail
   body.djep-paymentpage-ready #page_paypal .djep-payment-altbox.djep-payment-panel {
     padding: 20px !important;
     border-radius: 22px !important;
+  }
+}
+
+
+
+/* ============================================================================
+   AVELLA — CARD PROCESSING FEE DISCLOSURE
+   Online credit/debit card payments carry a 3% processing fee.
+   ============================================================================ */
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-disclosure {
+  margin: 14px 0 0 !important;
+  padding: 13px 14px !important;
+  color: #4a4a4a !important;
+  font-family: var(--djep-font-family) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  background: #f7f7f7 !important;
+  border: 1px solid #dedede !important;
+  border-left: 3px solid #111111 !important;
+  border-radius: 12px !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-disclosure strong {
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-preview {
+  display: grid !important;
+  gap: 8px !important;
+  margin: 12px 0 0 !important;
+  padding: 13px 14px !important;
+  background: #fafafa !important;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 12px !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-preview[hidden] {
+  display: none !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  color: #666666 !important;
+  font-size: 12.5px !important;
+  line-height: 1.4 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-row strong {
+  color: #222222 !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-row--total {
+  margin-top: 2px !important;
+  padding-top: 9px !important;
+  border-top: 1px solid #dedede !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-fee-row--total strong {
+  color: #111111 !important;
+  font-size: 14px !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-checkout-fee-note {
+  margin: 14px 0 0 !important;
+  padding: 12px 14px !important;
+  color: #555555 !important;
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  background: #f7f7f7 !important;
+  border: 1px solid #dedede !important;
+  border-radius: 12px !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-checkout-fee-note strong {
+  color: #111111 !important;
+}
+
+@media (max-width: 767px) {
+  body.djep-paymentpage-ready #page_paypal .djep-payment-fee-row {
+    font-size: 12px !important;
+  }
+
+  body.djep-paymentpage-ready #page_paypal .djep-payment-fee-disclosure,
+  body.djep-paymentpage-ready #page_paypal .djep-payment-fee-preview,
+  body.djep-paymentpage-ready #page_paypal .djep-payment-checkout-fee-note {
+    padding: 12px !important;
   }
 }
 
