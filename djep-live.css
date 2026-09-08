@@ -1,34 +1,34 @@
 @charset "utf-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
   /* ============================================================================
      BRAND COLOR OVERRIDE — change THIS one value to rebrand the whole portal.
-     Default is Abell DJ Company pink (#c1098a).
+     Default is Abell DJ Company pink (#111111).
      Every brand-tinted element on the site (buttons, links, focus rings, sidebar
      active states, hover accents, the page-title underline, calendar pills,
      etc.) is derived from this single color via the color-mix() rules below.
      If you want fine-grained control, you can override the individual
      --djep-brand-dark / --djep-brand-soft / --djep-button-bg* variables too.
      ============================================================================ */
-  --djep-brand: #c1098a;
+  --djep-brand: #111111;
 
   /* Auto-derived shades. oklch() darkens by reducing lightness while keeping
      the same hue + chroma, so warm brand colors (orange, yellow, red) stay
      warm instead of muddying through brown when faded toward black. */
-  --djep-brand-dark: oklch(from var(--djep-brand) calc(l - 0.18) c h);
-  --djep-brand-soft: color-mix(in srgb, var(--djep-brand) 10%, #fff);
+  --djep-brand-dark: #000000;
+  --djep-brand-soft: #f2f2f2;
   --djep-nav-active: var(--djep-brand);
 
   /* Button gradient stops — auto-derived from --djep-brand. If you don't like
      the result on a warm color, override --djep-button-bg-start with any hex
      (e.g. --djep-button-bg-start: #b04400;) to pick the dark side of the
      gradient yourself. The bright side rarely needs changing. */
-  --djep-button-bg-start: oklch(from var(--djep-brand) calc(l - 0.2) c h);
-  --djep-button-bg-end: color-mix(in srgb, var(--djep-brand) 95%, #fff);
-  --djep-button-bg-hover-start: oklch(from var(--djep-brand) calc(l - 0.25) c h);
-  --djep-button-bg-hover-end: color-mix(in srgb, var(--djep-brand) 88%, #fff);
+  --djep-button-bg-start: #0b0b0b;
+  --djep-button-bg-end: #2a2a2a;
+  --djep-button-bg-hover-start: #000000;
+  --djep-button-bg-hover-end: #171717;
 
   --djep-button-bg: linear-gradient(45deg, var(--djep-button-bg-start) 0%, var(--djep-button-bg-end) 76%);
   --djep-button-bg-hover: linear-gradient(45deg, var(--djep-button-bg-hover-start) 0%, var(--djep-button-bg-hover-end) 76%);
@@ -40,25 +40,25 @@
      warm brand (orange, yellow, red), this near-black mixed with the
      brand at the banner edges produces brown — override with a dark
      in-hue color of your choice, e.g. --djep-banner-dark: #2a1408; */
-  --djep-banner-dark: #141118;
+  --djep-banner-dark: #0a0a0a;
 
   /* ============================================================================
      Non-brand tokens — typography, surfaces, borders, etc. */
-  --djep-font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
-  --djep-font-heading: "Oswald", "Montserrat", "Segoe UI", Arial, sans-serif;
-  --djep-page-bg: #f3f5f9;
+  --djep-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --djep-font-heading: "DM Sans", "Inter", "Segoe UI", Arial, sans-serif;
+  --djep-page-bg: #f4f4f4;
   --djep-surface: #ffffff;
-  --djep-surface-muted: #f8f9fc;
-  --djep-surface-strong: #eef1f7;
-  --djep-border: #d8dfeb;
-  --djep-border-strong: #c6cfde;
-  --djep-shadow: 0 14px 34px rgba(17, 26, 46, 0.08);
-  --djep-shadow-soft: 0 8px 20px rgba(17, 26, 46, 0.06);
-  --djep-text: #182033;
-  --djep-text-muted: #5f6880;
-  --djep-heading: #101729;
-  --djep-nav-bg: #222a3d;
-  --djep-nav-text: #e9edf6;
+  --djep-surface-muted: #f7f7f7;
+  --djep-surface-strong: #efefef;
+  --djep-border: #dedede;
+  --djep-border-strong: #c9c9c9;
+  --djep-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  --djep-shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --djep-text: #262626;
+  --djep-text-muted: #6b6b6b;
+  --djep-heading: #111111;
+  --djep-nav-bg: #111111;
+  --djep-nav-text: #f5f5f5;
   --djep-button-border: rgba(255, 255, 255, 0.2);
   --djep-success: #248a57;
   --djep-warning-bg: #fff4cf;
@@ -137,7 +137,7 @@ body.djep-body {
   background:
     radial-gradient(circle at top left, rgb(from var(--djep-brand) r g b / 0.08), transparent 28%),
     radial-gradient(circle at top right, rgba(34, 42, 61, 0.1), transparent 30%),
-    linear-gradient(180deg, #f7f8fc 0%, #eef1f7 100%) !important;
+    linear-gradient(180deg, #f7f7f7 0%, #efefef 100%) !important;
 }
 
 a {
@@ -309,7 +309,7 @@ input[type="radio"] {
   padding: 0 15px;
   border-radius: 999px;
   border: 1px solid transparent;
-  color: #526078;
+  color: #5e5e5e;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -322,7 +322,7 @@ input[type="radio"] {
 }
 
 #djep-navigation li a:hover {
-  color: #243049;
+  color: #303030;
   background: rgba(27, 37, 57, 0.06);
   border-color: rgba(215, 223, 236, 0.96);
 }
@@ -666,7 +666,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-title {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   border-bottom: 1px solid var(--djep-border);
 }
 
@@ -847,7 +847,7 @@ html body div.rating-cancel {
   width: 88px;
   height: 88px;
   overflow: hidden;
-  background: linear-gradient(180deg, #f6f8fd 0%, #eef3fb 100%);
+  background: linear-gradient(180deg, #f8f8f8 0%, #f1f1f1 100%);
   border: 1px solid var(--djep-border);
   border-radius: 18px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -935,7 +935,7 @@ html body div.rating-cancel {
   display: block;
   margin-top: 8px;
   max-width: 760px;
-  color: #667085;
+  color: #6f6f6f;
   font-family: var(--djep-font-family);
   font-size: 15px;
   font-weight: 500;
@@ -953,13 +953,13 @@ html body div.rating-cancel {
   border: 1px solid rgba(198, 207, 222, 0.92);
   border-radius: 999px;
   background: rgba(237, 241, 248, 0.92);
-  color: #243049;
+  color: #303030;
   font-family: var(--djep-font-family);
 }
 
 .djep-home-event-meta-label,
 .djep-songrequest-meta-label {
-  color: #76839a;
+  color: #808080;
   font-family: var(--djep-font-family);
   font-size: 0.68rem;
   font-weight: 800;
@@ -969,7 +969,7 @@ html body div.rating-cancel {
 
 .djep-home-event-meta-value,
 .djep-songrequest-meta-value {
-  color: #243049;
+  color: #303030;
   font-family: var(--djep-font-family);
   font-size: 0.86rem;
   font-weight: 700;
@@ -1009,7 +1009,7 @@ body.djep-songrequestspage-ready .ui-widget-overlay {
 body.djep-guestmusicpage-ready .ui-dialog,
 body.djep-musicpage-ready .ui-dialog,
 body.djep-songrequestspage-ready .ui-dialog {
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 22px !important;
   background: #ffffff !important;
   box-shadow: 0 32px 80px rgba(15, 23, 42, 0.26) !important;
@@ -1021,9 +1021,9 @@ body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-titlebar,
 body.djep-musicpage-ready .ui-dialog .ui-dialog-titlebar,
 body.djep-songrequestspage-ready .ui-dialog .ui-dialog-titlebar {
   border: 0 !important;
-  border-bottom: 1px solid #e4e9f2 !important;
+  border-bottom: 1px solid #e6e6e6 !important;
   border-radius: 0 !important;
-  background: linear-gradient(180deg, #fbfcff 0%, #f6f8fc 100%) !important;
+  background: linear-gradient(180deg, #fbfbfb 0%, #f7f7f7 100%) !important;
   padding: 18px 22px !important;
 }
 
@@ -1046,7 +1046,7 @@ body.djep-songrequestspage-ready .ui-dialog .ui-dialog-titlebar-close {
   width: 34px !important;
   height: 34px !important;
   margin: 0 !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 999px !important;
   background: #ffffff !important;
   box-shadow: none !important;
@@ -1081,7 +1081,7 @@ body.djep-songrequestspage-ready .ui-dialog .ui-dialog-titlebar-close .ui-icon::
   justify-content: center;
   width: 100%;
   height: 100%;
-  color: #475467;
+  color: #555555;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -1131,12 +1131,12 @@ body.djep-homepage-ready .djep-home-event-card > .djep-home-event-shell {
   padding: 22px 24px;
   border: 1px solid rgba(216, 223, 235, 0.88);
   border-radius: 24px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   box-shadow: 0 8px 20px rgba(17, 26, 46, 0.035);
 }
 
 body.djep-homepage-ready .djep-home-event-intro {
-  color: #475467;
+  color: #555555;
   font-family: var(--djep-font-family);
   font-size: 12px;
   font-weight: 700;
@@ -1187,7 +1187,7 @@ body.djep-homepage-ready .djep-home-event-meta {
 
 body.djep-homepage-ready .djep-home-event-title {
   margin: 0;
-  color: #101729;
+  color: #111111;
   font-family: var(--djep-font-family);
   font-size: clamp(1.1rem, 1rem + 0.22vw, 1.26rem);
   font-weight: 700;
@@ -1197,7 +1197,7 @@ body.djep-homepage-ready .djep-home-event-title {
 
 body.djep-homepage-ready .djep-home-event-detail {
   margin: 8px 0 0;
-  color: #5f6880;
+  color: #6b6b6b;
   font-size: 0.93rem;
   font-weight: 500;
 }
@@ -1233,7 +1233,7 @@ body.djep-homepage-ready .djep-home-event-actions .djep-eventdetailsbutton {
 
 body.djep-homepage-ready .djep-home-event-actions .djep-planeventbutton:hover {
   color: #fff;
-  background-color: #c8218b;
+  background-color: #1f1f1f;
   background-image: var(--djep-button-bg-hover);
   border-color: rgba(112, 20, 92, 0.5);
   box-shadow: var(--djep-button-shadow-hover);
@@ -1242,7 +1242,7 @@ body.djep-homepage-ready .djep-home-event-actions .djep-planeventbutton:hover {
 
 body.djep-homepage-ready .djep-home-event-actions .djep-paymentbutton:hover {
   color: #fff;
-  background-color: #c8218b;
+  background-color: #1f1f1f;
   background-image: var(--djep-button-bg-hover);
   border-color: #ffffff;
   box-shadow: var(--djep-button-shadow-hover);
@@ -1251,13 +1251,13 @@ body.djep-homepage-ready .djep-home-event-actions .djep-paymentbutton:hover {
 
 body.djep-homepage-ready .djep-home-event-actions .djep-eventdetailsbutton {
   background: #ffffff;
-  color: #344054;
+  color: #3a3a3a;
   border-color: rgba(198, 207, 222, 0.9);
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05);
 }
 
 body.djep-homepage-ready .djep-home-event-actions .djep-eventdetailsbutton:hover {
-  color: #182033;
+  color: #262626;
   background: #f8fafc;
   border-color: rgba(198, 207, 222, 1);
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.08);
@@ -1323,7 +1323,7 @@ body.djep-eventspage-ready #page_eventslist > h2.djep-h2 {
 
 body.djep-eventspage-ready .djep-events-section {
   padding: 24px 26px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 18px 36px rgba(18, 28, 45, 0.05);
@@ -1335,7 +1335,7 @@ body.djep-eventspage-ready .djep-events-section + .djep-events-section {
 
 body.djep-eventspage-ready .djep-events-section-title {
   margin: 0 0 18px;
-  color: #344054;
+  color: #3a3a3a;
   font-family: var(--djep-font-family);
   font-size: 12.96px;
   font-weight: 700;
@@ -1368,7 +1368,7 @@ body.djep-eventspage-ready .djep-events-event-card > .djep-events-event-shell {
   padding: 22px 24px;
   border: 1px solid rgba(216, 223, 235, 0.88);
   border-radius: 24px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   box-shadow: 0 8px 20px rgba(17, 26, 46, 0.035);
 }
 
@@ -1390,7 +1390,7 @@ body.djep-eventspage-ready .djep-events-event-content {
 
 body.djep-eventspage-ready .djep-events-event-title {
   margin: 0;
-  color: #101729;
+  color: #111111;
   font-family: var(--djep-font-family);
   font-size: clamp(1.1rem, 1rem + 0.22vw, 1.26rem);
   font-weight: 700;
@@ -1400,7 +1400,7 @@ body.djep-eventspage-ready .djep-events-event-title {
 
 body.djep-eventspage-ready .djep-events-event-detail {
   margin: 8px 0 0;
-  color: #5f6880;
+  color: #6b6b6b;
   font-size: 0.93rem;
   font-weight: 500;
 }
@@ -1441,7 +1441,7 @@ body.djep-eventspage-ready .djep-events-event-actions .djep-eventdetailsbutton {
 
 body.djep-eventspage-ready .djep-events-event-actions .djep-planeventbutton:hover {
   color: #fff;
-  background-color: #c8218b;
+  background-color: #1f1f1f;
   background-image: var(--djep-button-bg-hover);
   border-color: rgba(112, 20, 92, 0.5);
   box-shadow: var(--djep-button-shadow-hover);
@@ -1450,7 +1450,7 @@ body.djep-eventspage-ready .djep-events-event-actions .djep-planeventbutton:hove
 
 body.djep-eventspage-ready .djep-events-event-actions .djep-paymentbutton:hover {
   color: #fff;
-  background-color: #c8218b;
+  background-color: #1f1f1f;
   background-image: var(--djep-button-bg-hover);
   border-color: #ffffff;
   box-shadow: var(--djep-button-shadow-hover);
@@ -1459,13 +1459,13 @@ body.djep-eventspage-ready .djep-events-event-actions .djep-paymentbutton:hover 
 
 body.djep-eventspage-ready .djep-events-event-actions .djep-eventdetailsbutton {
   background: #ffffff;
-  color: #344054;
+  color: #3a3a3a;
   border-color: rgba(198, 207, 222, 0.9);
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05);
 }
 
 body.djep-eventspage-ready .djep-events-event-actions .djep-eventdetailsbutton:hover {
-  color: #182033;
+  color: #262626;
   background: #f8fafc;
   border-color: rgba(198, 207, 222, 1);
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.08);
@@ -1475,8 +1475,8 @@ body.djep-eventspage-ready .djep-events-empty-state {
   padding: 18px 20px;
   border: 1px dashed rgba(198, 207, 222, 0.96);
   border-radius: 20px;
-  background: #fbfcfe;
-  color: #667085;
+  background: #fbfbfb;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
 }
@@ -1587,7 +1587,7 @@ body.djep-profilepage-ready .djep-profile-panel {
 body.djep-profilepage-ready .djep-profile-panel > .djep-titlebarsmall {
   margin: 0;
   padding: 0;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -1605,7 +1605,7 @@ body.djep-profilepage-ready .djep-profile-panel-note {
   margin: 8px 0 18px;
   width: 100%;
   max-width: none;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.55;
@@ -1663,7 +1663,7 @@ body.djep-profilepage-ready .djep-profile-field {
 }
 
 body.djep-profilepage-ready .djep-profile-field-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
@@ -1672,7 +1672,7 @@ body.djep-profilepage-ready .djep-profile-field-label {
 body.djep-profilepage-ready .djep-profile-field-value {
   justify-self: end;
   text-align: right;
-  color: #182033;
+  color: #262626;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
@@ -1680,7 +1680,7 @@ body.djep-profilepage-ready .djep-profile-field-value {
 }
 
 body.djep-profilepage-ready .djep-profile-field-value.is-empty {
-  color: #98a2b3;
+  color: #9b9b9b;
   font-weight: 600;
 }
 
@@ -1864,7 +1864,7 @@ body.djep-contactpage-ready .djep-contact-column {
 
 body.djep-contactpage-ready .djep-contact-panel {
   padding: 24px 26px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 18px 36px rgba(18, 28, 45, 0.05);
@@ -1875,7 +1875,7 @@ body.djep-contactpage-ready .djep-contact-panel > .djep-titlebarsmall {
   padding: 0;
   border: 0;
   background: transparent;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12.96px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -1890,7 +1890,7 @@ body.djep-contactpage-ready .djep-contact-panel-note {
   width: 100%;
   max-width: none;
   margin: 8px 0 18px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -1909,7 +1909,7 @@ body.djep-contactpage-ready .djep-contact-form-row {
 
 body.djep-contactpage-ready .djep-contact-form-label {
   padding-top: 14px;
-  color: #475467;
+  color: #555555;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
@@ -1926,10 +1926,10 @@ body.djep-contactpage-ready .djep-contact-form-control > select {
   max-width: none !important;
   min-height: 48px;
   padding: 12px 14px;
-  border: 1px solid #d5deea;
+  border: 1px solid #dddddd;
   border-radius: 16px;
-  background: #fbfcfe;
-  color: #1f2937;
+  background: #fbfbfb;
+  color: #2a2a2a;
   font-size: 15px;
   box-sizing: border-box;
 }
@@ -1944,7 +1944,7 @@ body.djep-contactpage-ready .djep-contact-form-control > input:focus,
 body.djep-contactpage-ready .djep-contact-form-control > textarea:focus,
 body.djep-contactpage-ready .djep-contact-form-control > select:focus {
   outline: none;
-  border-color: #cf1c88;
+  border-color: #111111;
   box-shadow: 0 0 0 4px rgba(207, 28, 136, 0.12);
   background: #fff;
 }
@@ -1995,7 +1995,7 @@ body.djep-contactpage-ready .djep-contact-info-icon {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: linear-gradient(180deg, #f6f8fc 0%, #eef2f8 100%);
+  background: linear-gradient(180deg, #f7f7f7 0%, #f0f0f0 100%);
 }
 
 body.djep-contactpage-ready .djep-contact-info-icon img {
@@ -2011,7 +2011,7 @@ body.djep-contactpage-ready .djep-contact-info-body {
 
 body.djep-contactpage-ready .djep-contact-info-label {
   margin-bottom: 6px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11.84px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -2020,7 +2020,7 @@ body.djep-contactpage-ready .djep-contact-info-label {
 
 body.djep-contactpage-ready .djep-contact-info-value,
 body.djep-contactpage-ready .djep-contact-info-value a {
-  color: #182033;
+  color: #262626;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.6;
@@ -2028,7 +2028,7 @@ body.djep-contactpage-ready .djep-contact-info-value a {
 }
 
 body.djep-contactpage-ready .djep-contact-info-value a:hover {
-  color: #cf1c88;
+  color: #111111;
 }
 
 @media (max-width: 991px) {
@@ -2233,7 +2233,7 @@ body.djep-requestchangespage-ready .djep-requestchanges-option-label:has(input:c
 body.djep-requestchangespage-ready .djep-requestchanges-panel > [id^="change_of_"] {
   margin: 0 22px 14px;
   padding: 18px 18px 10px;
-  background: linear-gradient(180deg, #fff, #fbfcff);
+  background: linear-gradient(180deg, #fff, #fbfbfb);
   border: 1px solid var(--djep-border);
   border-radius: 18px;
 }
@@ -2287,8 +2287,8 @@ body.djep-requestchangespage-ready .djep-requestchanges-panel > [id^="change_of_
   appearance: none;
   background-image:
     linear-gradient(180deg, #ffffff, #f8fbff),
-    linear-gradient(45deg, transparent 50%, #667085 50%),
-    linear-gradient(135deg, #667085 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, #6f6f6f 50%),
+    linear-gradient(135deg, #6f6f6f 50%, transparent 50%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
   background-size: 100% 100%, 6px 6px, 6px 6px;
@@ -2552,7 +2552,7 @@ input.djep-searchbutton {
   min-width: 96px;
   padding: 10px 18px;
   background: #ffffff;
-  color: #344054;
+  color: #3a3a3a;
   border-color: rgba(198, 207, 222, 0.9);
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05);
   font-size: 0.92rem;
@@ -2561,7 +2561,7 @@ input.djep-searchbutton {
 }
 
 .djep-readviewbutton:hover {
-  color: #182033;
+  color: #262626;
   background: #f8fafc;
   border-color: rgba(198, 207, 222, 1);
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.08);
@@ -2571,14 +2571,14 @@ body.djep-musicpage-ready #add_your_own_song_helper_div input.djep-actionbutton[
 form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div input.djep-actionbutton[value="Save"] {
   font-family: var(--djep-font-family) !important;
   background: #ffffff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   border-color: rgba(198, 207, 222, 0.9) !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
 }
 
 body.djep-musicpage-ready #add_your_own_song_helper_div input.djep-actionbutton[value="Save"]:hover,
 form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div input.djep-actionbutton[value="Save"]:hover {
-  color: #182033 !important;
+  color: #262626 !important;
   background: #f8fafc !important;
   border-color: rgba(198, 207, 222, 1) !important;
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.08) !important;
@@ -3200,7 +3200,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div in
   padding: 11px 20px !important;
   border-radius: 999px !important;
   border: 1px solid var(--djep-button-border) !important;
-  background-color: #c8218b !important;
+  background-color: #1f1f1f !important;
   background-image: var(--djep-button-bg) !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -3643,7 +3643,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div in
   color: var(--djep-heading);
   font-size: 1rem;
   font-weight: 800;
-  background: linear-gradient(180deg, #fff, #fafbfe);
+  background: linear-gradient(180deg, #fff, #fafafa);
   border: 1px solid var(--djep-border);
   border-radius: 14px;
 }
@@ -3928,13 +3928,13 @@ form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div in
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #667085;
+  background: #6f6f6f;
   box-shadow:
-    10px 0 0 #667085,
-    0 8px 0 #667085,
-    10px 8px 0 #667085,
-    0 16px 0 #667085,
-    10px 16px 0 #667085;
+    10px 0 0 #6f6f6f,
+    0 8px 0 #6f6f6f,
+    10px 8px 0 #6f6f6f,
+    0 16px 0 #6f6f6f,
+    10px 16px 0 #6f6f6f;
 }
 
 .djep-timeline-panel .djep-timelinetable tr:has(.djep-timelinetextbox1) > td:last-child > div > *:nth-child(2),
@@ -4130,7 +4130,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div in
 .djep-timeline-panel .djep-timelinetable tr:has(.djep-sectiontitle) .djep-sectiontitle {
   text-transform: uppercase;
   font-size: 0.73rem !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   letter-spacing: 0.06em !important;
 }
 
@@ -4199,7 +4199,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #add_your_own_song_helper_div in
 }
 
 .djep-timeline-panel .djep-timelinetable .djep-timeline-action.is-move .djep-control-glyph {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 18px;
   letter-spacing: 1px;
 }
@@ -4305,7 +4305,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-subtitle {
   display: block;
   max-width: 760px;
   margin: 10px 0 0;
-  color: #667085;
+  color: #6f6f6f;
   font-family: var(--djep-font-family);
   font-size: 15px;
   font-weight: 500;
@@ -4337,7 +4337,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #djep-bi
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #alternative_card_address > .djep-titlebar {
   margin: 0;
   padding: 18px 22px 14px;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -4350,7 +4350,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #alterna
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #payment-request-button,
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #djep-billingcheckbox {
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
   border: 1px solid var(--djep-border);
   border-radius: 20px;
   box-shadow: var(--djep-shadow-soft);
@@ -4406,7 +4406,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #maincar
 
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #maincarddiv label {
   margin: 0 0 8px;
-  color: #738199 !important;
+  color: #7a7a7a !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
@@ -4466,7 +4466,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #djep-bi
 
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #djep-billingcheckbox .address_padding {
   padding: 12px 0 8px !important;
-  color: #475467;
+  color: #555555;
   font-size: 14px;
   font-weight: 600;
 }
@@ -4496,7 +4496,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details #alterna
 body.djep-paymentpage-ready #page_paypal .djep-makepaymentbox {
   padding-bottom: 24px;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
   border: 1px solid var(--djep-border);
   border-radius: 28px;
   box-shadow: var(--djep-shadow-soft);
@@ -4530,7 +4530,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .djep-ma
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .djep-makepaymentbox > .djep-titlebarsmall {
   margin: 0;
   padding: 22px 26px 0;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -4544,7 +4544,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-titlebar {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12.96px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -4602,7 +4602,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .djep-ma
 
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .questiontitle,
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details label:not(.switch):not(.toggle) {
-  color: #738199;
+  color: #7a7a7a;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -4642,7 +4642,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details input[ty
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details select:focus,
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details textarea:focus,
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .form-control:focus {
-  border-color: #98a2b3;
+  border-color: #9b9b9b;
   box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15);
   outline: none;
 }
@@ -4691,7 +4691,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details .checkbo
 
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details input[type="radio"],
 body.djep-paymentpage-ready #page_paypal form.djep-payment-step-details input[type="checkbox"] {
-  accent-color: #667085;
+  accent-color: #6f6f6f;
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-brandrow {
@@ -4718,7 +4718,7 @@ body.djep-paymentpage-ready #page_paypal .djep-innercontentdiv.djep-payment-rebu
 body.djep-paymentpage-ready #page_paypal .djep-payment-card {
   min-height: 100%;
   padding: 22px;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
   border: 1px solid var(--djep-border);
   border-radius: 18px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -4742,7 +4742,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-submit-card {
 body.djep-paymentpage-ready #page_paypal .djep-payment-card-label {
   display: block;
   margin: 0 0 10px;
-  color: #738199;
+  color: #7a7a7a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.11em;
@@ -4813,7 +4813,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-submit-card .djep-actionb
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-altbox {
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
   border: 1px solid var(--djep-border);
   border-radius: 28px;
   box-shadow: var(--djep-shadow-soft);
@@ -4822,7 +4822,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-altbox {
 body.djep-paymentpage-ready #page_paypal .djep-payment-altbox > .djep-titlebarsmall {
   margin: 0;
   padding: 24px 26px 0;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -4878,7 +4878,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-altlink {
   justify-content: center;
   min-height: 76px;
   padding: 12px 14px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid var(--djep-border);
   border-radius: 16px;
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.05);
@@ -4926,14 +4926,14 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-altcard--check {
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-altlink-label {
-  color: #172033;
+  color: #262626;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.25;
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-altlink-copy {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   line-height: 1.45;
 }
@@ -4941,7 +4941,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-altlink-copy {
 body.djep-paymentpage-ready #page_paypal .djep-payment-altcheck-address {
   display: block;
   width: 100%;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
@@ -4981,7 +4981,7 @@ body.djep-payment-success-ready #djep-content > .djep-payment-success-shell {
 
 body.djep-payment-success-ready .djep-payment-success-card {
   padding: clamp(26px, 3vw, 40px);
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
   border: 1px solid rgba(216, 223, 235, 0.88);
   border-radius: 28px;
   box-shadow: var(--djep-shadow-soft);
@@ -5026,7 +5026,7 @@ body.djep-payment-success-ready .djep-payment-success-card p,
 body.djep-payment-success-ready .djep-payment-success-card li,
 body.djep-payment-success-ready .djep-payment-success-card td,
 body.djep-payment-success-ready .djep-payment-success-card th {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 15px;
   line-height: 1.7;
 }
@@ -5043,7 +5043,7 @@ body.djep-payment-success-ready .djep-payment-success-card h3 .djep-payment-succ
   width: 100%;
   max-width: 760px;
   margin-top: 10px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.65;
@@ -5230,7 +5230,7 @@ body.djep-paymentpage-ready #page_paypal form {
 body.djep-paymentpage-ready #page_paypal .djep-payment-subtitle {
   margin: 12px 0 0 !important;
   padding-bottom: 16px !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-family: var(--djep-font-family) !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
@@ -5300,7 +5300,7 @@ body.djep-paymentpage-ready #page_paypal .djep-makepaymentbox.djep-payment-panel
 body.djep-paymentpage-ready #page_paypal .djep-payment-altbox.djep-payment-panel {
   padding: 24px !important;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%) !important;
   border: 1px solid rgba(216, 223, 235, 0.88) !important;
   border-radius: 26px !important;
   box-shadow: var(--djep-shadow-soft) !important;
@@ -5310,7 +5310,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-panel > .djep-titlebarsma
 body.djep-paymentpage-ready #page_paypal .djep-payment-panel > .djep-titlebar {
   margin: 0 !important;
   padding: 0 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 13px !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
@@ -5376,7 +5376,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-summary-panel .djep-payme
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-card-label {
   margin: 0 0 10px;
-  color: #738199;
+  color: #7a7a7a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.11em;
@@ -5385,7 +5385,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-card-label {
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-panel-copy {
   margin: 10px 0 0 !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 14px !important;
   line-height: 1.55 !important;
 }
@@ -5401,7 +5401,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-alt-copy-line {
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-alt-copy strong {
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-weight: 700 !important;
 }
 
@@ -5417,7 +5417,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-cardholder-block {
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-cardholder-label {
   margin: 0 !important;
-  color: #738199 !important;
+  color: #7a7a7a !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
@@ -5429,7 +5429,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-cardholder-input {
   max-width: 100% !important;
   min-height: 52px !important;
   padding: 14px 16px !important;
-  color: #101828 !important;
+  color: #111111 !important;
   font-size: 15px !important;
   background: #fff !important;
   border: 1px solid rgba(191, 203, 219, 0.92) !important;
@@ -5440,7 +5440,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-cardholder-input {
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-card-copy {
   margin: 0 0 14px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -5553,7 +5553,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
 
 .djep-payment-alt-modal__title {
   margin: 0;
-  color: #172033;
+  color: #262626;
   font-size: 22px;
   font-weight: 800;
   line-height: 1.2;
@@ -5565,7 +5565,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
   border: 1px solid rgba(203, 213, 225, 0.96);
   border-radius: 999px;
   background: #fff;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 26px;
   line-height: 1;
   cursor: pointer;
@@ -5581,7 +5581,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
 
 .djep-payment-alt-modal__note {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   line-height: 1.5;
   display: none !important;
@@ -5617,7 +5617,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
 
 .djep-payment-alt-modal__check-copy {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -5626,8 +5626,8 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
   padding: 18px 20px;
   border: 1px solid rgba(213, 222, 236, 0.92);
   border-radius: 18px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafc 100%);
-  color: #172033;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
+  color: #262626;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.7;
@@ -5644,7 +5644,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
   border: 1px solid rgba(203, 213, 225, 0.96);
   border-radius: 999px;
   background: #fff;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -5672,7 +5672,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-column-side .djep-payment
   border: 1px solid rgba(191, 203, 219, 0.92);
   border-radius: 14px;
   background: #fff;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
@@ -5782,7 +5782,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-details-panel #maincarddi
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-details-panel #maincarddiv label {
   margin: 0 !important;
-  color: #738199 !important;
+  color: #7a7a7a !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
@@ -5828,7 +5828,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-details-panel #card-submi
   min-width: 184px !important;
   min-height: 52px !important;
   padding: 0 22px !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 14px !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
@@ -5840,7 +5840,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-details-panel #card-submi
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-details-panel #card-submit button:hover {
-  border-color: #98a2b3 !important;
+  border-color: #9b9b9b !important;
   background: #f8fafc !important;
   box-shadow: 0 10px 20px rgba(17, 26, 46, 0.08) !important;
 }
@@ -6066,7 +6066,7 @@ body.djep-planpage-ready .djep-plan-panel,
 body.djep-planpage-ready .djep-plan-print-card {
   display: block !important;
   margin: 0;
-  border: 1px solid #dbe3ef !important;
+  border: 1px solid #e2e2e2 !important;
   border-radius: 28px !important;
   background: rgba(255, 255, 255, 0.96) !important;
   box-shadow: 0 18px 36px rgba(18, 28, 45, 0.05) !important;
@@ -6092,7 +6092,7 @@ body.djep-planpage-ready .djep-plan-panel > .djep-titlebar .djep-titlebarspan {
 
 body.djep-planpage-ready .djep-plan-panel > .djep-titlebar,
 body.djep-planpage-ready .djep-plan-panel-label {
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 12.96px !important;
   font-weight: 800 !important;
   letter-spacing: 0.12em !important;
@@ -6187,7 +6187,7 @@ body.djep-planpage-ready .djep-plan-access-copy {
 }
 
 body.djep-planpage-ready .djep-plan-access-label {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -6197,7 +6197,7 @@ body.djep-planpage-ready .djep-plan-access-label {
 
 body.djep-planpage-ready .djep-plan-access-message {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.45;
@@ -6238,7 +6238,7 @@ body.djep-planpage-ready .djep-plan-panel-timeline table tr {
   padding: 16px 18px;
   border: 1px solid rgba(224, 230, 239, 0.96);
   border-radius: 18px;
-  background: #fbfcfe;
+  background: #fbfbfb;
   box-shadow: none;
 }
 
@@ -6249,7 +6249,7 @@ body.djep-planpage-ready .djep-plan-panel-timeline table tr::after {
 
 body.djep-planpage-ready .djep-plan-panel-forms table tr:hover,
 body.djep-planpage-ready .djep-plan-panel-timeline table tr:hover {
-  background: #fbfcfe;
+  background: #fbfbfb;
   border-color: rgba(224, 230, 239, 0.96);
   box-shadow: none;
   transform: none;
@@ -6286,7 +6286,7 @@ body.djep-planpage-ready .djep-plan-entry-copy {
 }
 
 body.djep-planpage-ready .djep-plan-entry-title {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.32;
@@ -6294,7 +6294,7 @@ body.djep-planpage-ready .djep-plan-entry-title {
 }
 
 body.djep-planpage-ready .djep-plan-entry-note {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 12.5px;
   font-weight: 500;
   line-height: 1.45;
@@ -6347,7 +6347,7 @@ body.djep-planpage-ready .djep-plan-panel-music .djep-plan-tool {
   padding: 16px 18px;
   border: 1px solid rgba(224, 230, 239, 0.96);
   border-radius: 18px;
-  background: #fbfcfe;
+  background: #fbfbfb;
   box-shadow: none;
   text-decoration: none !important;
 }
@@ -6379,14 +6379,14 @@ body.djep-planpage-ready .djep-plan-tool-copy {
 }
 
 body.djep-planpage-ready .djep-plan-tool-title {
-  color: #101729;
+  color: #111111;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.25;
 }
 
 body.djep-planpage-ready .djep-plan-tool-note {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.45;
@@ -6475,7 +6475,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar {
   align-items: start;
   margin-top: 20px !important;
   padding: 30px 24px 22px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,253,.98));
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -6488,7 +6488,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-intro {
 }
 
 body.djep-planningformpage-ready .djep-planningform-toolbar-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -6496,7 +6496,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-label {
 }
 
 body.djep-planningformpage-ready .djep-planningform-toolbar-title {
-  color: #101729;
+  color: #111111;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.12;
@@ -6506,7 +6506,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-title {
 body.djep-planningformpage-ready .djep-planningform-toolbar-note {
   margin: 0;
   max-width: 720px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
@@ -6517,14 +6517,14 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-tip {
   align-items: center;
   gap: 8px;
   margin: 6px 0 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.45;
 }
 
 body.djep-planningformpage-ready .djep-planningform-toolbar-tip-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -6532,7 +6532,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-tip-label {
 }
 
 body.djep-planningformpage-ready .djep-planningform-toolbar-tip-link {
-  color: #475467 !important;
+  color: #555555 !important;
   font-size: 13px;
   font-weight: 700;
   text-decoration: underline;
@@ -6542,7 +6542,7 @@ body.djep-planningformpage-ready .djep-planningform-toolbar-tip-link {
 }
 
 body.djep-planningformpage-ready .djep-planningform-toolbar-tip-link:hover {
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-decoration-color: rgba(71, 84, 103, 0.9);
 }
 
@@ -6566,7 +6566,7 @@ body.djep-planningformpage-ready .djep-planningform-meta-card {
 }
 
 body.djep-planningformpage-ready .djep-planningform-meta-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -6574,7 +6574,7 @@ body.djep-planningformpage-ready .djep-planningform-meta-label {
 }
 
 body.djep-planningformpage-ready .djep-planningform-timer {
-  color: #101729;
+  color: #111111;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
@@ -6590,7 +6590,7 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #344054;
+  color: #3a3a3a;
   cursor: pointer;
 }
 
@@ -6601,7 +6601,7 @@ body.djep-planningformpage-ready .djep-planningform-toggle input {
 }
 
 body.djep-planningformpage-ready .djep-planningform-toggle-text {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -6618,7 +6618,7 @@ body.djep-planningformpage-ready .djep-planningform-save-top {
 
 body.djep-planningformpage-ready #ep_form table[id^="planning_form_table_"] {
   width: min(100%, 1190px) !important;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
   background: rgba(255,255,255,.98);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -6653,18 +6653,18 @@ body.djep-planningformpage-ready #ep_form table[id^="planning_form_table_"] tr.d
 body.djep-planningformpage-ready .djep-form-sections {
   display: block;
   padding: 20px 24px !important;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   border: 0;
   border-radius: 0;
 }
 
 body.djep-planningformpage-ready .djep-form-sections span {
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-weight: inherit !important;
 }
 
@@ -6675,14 +6675,14 @@ body.djep-planningformpage-ready #ep_form td[class="ed"] {
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-field-row td:first-child {
-  color: #243049;
+  color: #303030;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.55;
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-subfield-row td:first-child {
-  color: #667085;
+  color: #6f6f6f;
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-note-row,
@@ -6708,14 +6708,14 @@ body.djep-planningformpage-ready #ep_form tr.djep-planningform-image-row td {
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-note-row td {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.65;
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-note-row strong {
-  color: #182033;
+  color: #262626;
 }
 
 body.djep-planningformpage-ready #ep_form tr.djep-planningform-fullcontrol-row textarea {
@@ -6793,7 +6793,7 @@ body.djep-planningformpage-ready #ep_form td.ed a {
   margin-top: 8px;
   font-size: 13px;
   font-weight: 700;
-  color: #475467 !important;
+  color: #555555 !important;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -6801,7 +6801,7 @@ body.djep-planningformpage-ready #ep_form td.ed a {
 }
 
 body.djep-planningformpage-ready #ep_form td.ed a:hover {
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-decoration-color: rgba(71, 84, 103, 0.9);
 }
 
@@ -6824,7 +6824,7 @@ body.djep-planningformpage-ready #ep_form select {
   background-repeat: no-repeat, no-repeat;
   background-position: 0 0, right 14px center;
   background-size: auto, 14px 14px;
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 14px;
   font-weight: 600;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03);
@@ -6843,7 +6843,7 @@ body.djep-planningformpage-ready #ep_form input[type="checkbox"] {
   width: 16px;
   min-height: 16px;
   margin: 2px 0 0;
-  accent-color: #667085;
+  accent-color: #6f6f6f;
 }
 
 /* Music Page */
@@ -6928,7 +6928,7 @@ body.djep-musicpage-ready .djep-music-panel {
   width: min(100%, 1190px) !important;
   margin: 0 auto;
   padding: 24px 24px 26px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -7072,7 +7072,7 @@ body.djep-guestmusicpage-ready .djep-guestmusic-dropzone {
   min-height: 280px;
   width: 100% !important;
   padding: 18px;
-  background: linear-gradient(180deg, #fbfcff 0%, #f6f8fc 100%);
+  background: linear-gradient(180deg, #fbfbfb 0%, #f7f7f7 100%);
   border: 1.5px dashed rgba(201, 210, 225, 0.95);
   border-radius: 22px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -7083,14 +7083,14 @@ body.djep-guestmusicpage-ready .djep-guestmusic-dropcopy {
   place-items: center;
   min-height: 220px;
   padding: 12px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 1rem;
   line-height: 1.6;
   text-align: center;
 }
 
 body.djep-guestmusicpage-ready .djep-guestmusic-dropcopy strong {
-  color: #101729;
+  color: #111111;
 }
 
 body.djep-guestmusicpage-ready .djep-guestmusic-submit-wrap {
@@ -7139,7 +7139,7 @@ body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-content {
 body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-content p,
 body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-content label,
 body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-content .djep-popup-copy {
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 14px !important;
   line-height: 1.6 !important;
 }
@@ -7147,16 +7147,16 @@ body.djep-guestmusicpage-ready .ui-dialog .ui-dialog-content .djep-popup-copy {
 body.djep-guestmusicpage-ready .ui-dialog #guest_name {
   min-height: 48px;
   padding: 0 14px !important;
-  border: 1.25px solid #d8dfeb !important;
+  border: 1.25px solid #dedede !important;
   border-radius: 14px !important;
   background: #ffffff !important;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03) !important;
-  color: #101729 !important;
+  color: #111111 !important;
   font-size: 15px !important;
 }
 
 body.djep-guestmusicpage-ready .ui-dialog #guest_name:focus {
-  border-color: #cf1c88 !important;
+  border-color: #111111 !important;
   box-shadow: 0 0 0 4px rgba(207, 28, 136, 0.12) !important;
 }
 
@@ -7220,7 +7220,7 @@ body.djep-musicpage-ready .djep-music-browser-column {
   gap: 14px;
   align-content: start;
   padding: 20px 18px 22px !important;
-  border: 1px solid #dbe3ef !important;
+  border: 1px solid #e2e2e2 !important;
   border-radius: 26px;
   background: linear-gradient(180deg, #fdfdff 0%, #f7f9fc 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -7231,9 +7231,9 @@ body.djep-musicpage-ready .djep-music-requests-column {
   display: grid;
   gap: 14px;
   padding: 20px 18px 22px !important;
-  border: 1px solid #dbe3ef !important;
+  border: 1px solid #e2e2e2 !important;
   border-radius: 26px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f7f9fc 100%);
+  background: linear-gradient(180deg, #fcfcfc 0%, #f7f9fc 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
@@ -7253,7 +7253,7 @@ body.djep-musicpage-ready .djep-music-browser-intro {
 
 body.djep-musicpage-ready .djep-music-browser-copy {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.55;
@@ -7307,7 +7307,7 @@ body.djep-musicpage-ready .ui-tabs .ui-tabs-nav a {
   border: 0 !important;
   border-radius: 999px;
   background: transparent !important;
-  color: #526078 !important;
+  color: #5e5e5e !important;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -7323,7 +7323,7 @@ body.djep-musicpage-ready .ui-tabs .ui-tabs-nav li.djep-music-tab-utility {
 
 body.djep-musicpage-ready .ui-tabs .ui-tabs-nav li.djep-music-tab-utility a {
   min-width: 88px;
-  color: #526078 !important;
+  color: #5e5e5e !important;
   font-size: 12px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -7332,7 +7332,7 @@ body.djep-musicpage-ready .ui-tabs .ui-tabs-nav li.djep-music-tab-utility a {
 body.djep-musicpage-ready .ui-tabs .ui-tabs-nav a:hover {
   border-color: transparent;
   background: transparent;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 body.djep-musicpage-ready .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
@@ -7375,7 +7375,7 @@ body.djep-musicpage-ready .djep-music-control-table {
 
 body.djep-musicpage-ready .djep-music-control-table td {
   padding: 0 !important;
-  color: #475467;
+  color: #555555;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
@@ -7389,7 +7389,7 @@ body.djep-musicpage-ready .djep-music-control-table tr.djep-music-alpha-row td {
 body.djep-musicpage-ready .djep-music-control-table tr.djep-music-search-row td:first-child,
 body.djep-musicpage-ready .djep-music-control-table tr.djep-music-filter-row td:first-child {
   width: 78px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -7407,7 +7407,7 @@ body.djep-musicpage-ready .djep-music-results-header-table {
   border-collapse: separate;
   border-spacing: 0;
   background: #f4f6fb;
-  border: 1px solid #e3e8f1;
+  border: 1px solid #e5e5e5;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -7574,14 +7574,14 @@ form[name="ep_form"][action*="browsemusic.asp"] #most_requested_music_results_he
 body.djep-musicpage-ready .djep-music-results-header-table td {
   padding: 10px 14px !important;
   background: transparent !important;
-  color: #475467;
+  color: #555555;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 body.djep-musicpage-ready .djep-music-results-header-table td + td {
-  border-left: 1px solid #e3e8f1 !important;
+  border-left: 1px solid #e5e5e5 !important;
 }
 
 body.djep-musicpage-ready .djep-artistsongbuttons,
@@ -7592,10 +7592,10 @@ body.djep-musicpage-ready .djep-artistsongbuttonswide {
   min-width: 34px;
   min-height: 34px;
   padding: 0 10px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 10px;
   background: #fff;
-  color: #475467 !important;
+  color: #555555 !important;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
@@ -7609,9 +7609,9 @@ body.djep-musicpage-ready .djep-artistsongbuttonswide {
 
 body.djep-musicpage-ready .djep-artistsongbuttons:hover,
 body.djep-musicpage-ready .djep-artistsongbuttonswide:hover {
-  border-color: #c6cfde;
+  border-color: #c9c9c9;
   background: #f8fafc;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 body.djep-musicpage-ready .djep-musicsearchform,
@@ -7624,7 +7624,7 @@ body.djep-musicpage-ready .djep-tabs-all textarea {
   border: 1px solid rgba(198, 207, 222, 0.92);
   border-radius: 12px;
   background: #fff;
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 14px;
   line-height: 1.45;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03);
@@ -7673,10 +7673,10 @@ body.djep-musicpage-ready .djep-searchbutton {
   min-width: 96px;
   min-height: 44px;
   padding: 0 16px !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 12px !important;
   background: #fff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -7685,9 +7685,9 @@ body.djep-musicpage-ready .djep-searchbutton {
 }
 
 body.djep-musicpage-ready .djep-searchbutton:hover {
-  border-color: #c6cfde !important;
+  border-color: #c9c9c9 !important;
   background: #f8fafc !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: 0 10px 18px rgba(17, 26, 46, 0.08) !important;
 }
 
@@ -7701,17 +7701,17 @@ body.djep-musicpage-ready .djep-music-empty-state {
   align-content: start;
   min-height: 132px;
   padding: 14px 14px;
-  border: 1px dashed #d8dfeb;
+  border: 1px dashed #dedede;
   border-radius: 18px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafc 100%);
-  color: #667085;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.6;
 }
 
 body.djep-musicpage-ready .djep-music-empty-state strong {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -7724,10 +7724,10 @@ body.djep-musicpage-ready .djep-music-instructions {
   margin: 2px 0 0 !important;
   padding: 0 0 0 12px !important;
   border: 0 !important;
-  border-left: 2px solid #d8dfeb !important;
+  border-left: 2px solid #dedede !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 12px !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
@@ -7735,7 +7735,7 @@ body.djep-musicpage-ready .djep-music-instructions {
 }
 
 body.djep-musicpage-ready .djep-music-instructions strong {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -7749,7 +7749,7 @@ body.djep-musicpage-ready .djep-music-browser-tip {
   margin: 6px 0 2px !important;
   padding: 0 0 0 12px !important;
   border: 0 !important;
-  border-left: 2px solid #d8dfeb !important;
+  border-left: 2px solid #dedede !important;
   border-radius: 0 !important;
   background: transparent !important;
 }
@@ -7761,7 +7761,7 @@ body.djep-musicpage-ready .djep-music-requests-intro {
 }
 
 body.djep-musicpage-ready .djep-music-section-label {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -7770,7 +7770,7 @@ body.djep-musicpage-ready .djep-music-section-label {
 
 body.djep-musicpage-ready .djep-music-requests-copy {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.55;
@@ -7791,14 +7791,14 @@ body.djep-musicpage-ready .djep-music-meta-chip {
   gap: 6px;
   min-height: 30px;
   padding: 0 10px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 999px;
   background: #f8fafc;
   font-family: var(--djep-font-family);
 }
 
 body.djep-musicpage-ready .djep-music-meta-chip-label {
-  color: #667085;
+  color: #6f6f6f;
   font-family: var(--djep-font-family);
   font-size: 10px;
   font-weight: 800;
@@ -7807,7 +7807,7 @@ body.djep-musicpage-ready .djep-music-meta-chip-label {
 }
 
 body.djep-musicpage-ready .djep-music-meta-chip-value {
-  color: #243049;
+  color: #303030;
   font-family: var(--djep-font-family);
   font-size: 12px;
   font-weight: 700;
@@ -7857,7 +7857,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-request-switch {
   border: 1px solid transparent;
   border-radius: 999px;
   background: transparent;
-  color: #526078;
+  color: #5e5e5e;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -7872,7 +7872,7 @@ body.djep-musicpage-ready .djep-music-request-switch:hover,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-request-switch:hover {
   border-color: rgba(215, 223, 236, 0.96);
   background: rgba(27, 37, 57, 0.06);
-  color: #243049;
+  color: #303030;
 }
 
 body.djep-musicpage-ready .djep-music-request-switch.is-active,
@@ -7925,7 +7925,7 @@ body.djep-musicpage-ready .djep-music-empty-action:hover,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-empty-action:hover {
   border-color: rgba(183, 195, 217, 0.98);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(240, 244, 250, 0.98));
-  color: #243049;
+  color: #303030;
 }
 
 body.djep-musicpage-ready .djep-music-request-view,
@@ -7944,17 +7944,17 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlists-empty {
   display: grid;
   gap: 6px;
   padding: 16px 18px;
-  border: 1px dashed #d8dfeb;
+  border: 1px dashed #dedede;
   border-radius: 18px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafc 100%);
-  color: #667085;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
+  color: #6f6f6f;
   font-size: 13px;
   line-height: 1.55;
 }
 
 body.djep-musicpage-ready .djep-music-playlists-empty strong,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlists-empty strong {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 13px;
   font-weight: 700;
 }
@@ -7995,10 +7995,10 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #sa
   width: 100% !important;
   margin: 0 0 8px;
   padding: 12px 14px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
-  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  color: #2a2a2a;
   box-shadow: 0 10px 20px rgba(17, 26, 46, 0.05);
 }
 
@@ -8024,7 +8024,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #sa
 
 body.djep-musicpage-ready .djep-music-native-playlists #saved_playlists_accordion > .ui-accordion-header .djep-playlisttitle,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #saved_playlists_accordion > .ui-accordion-header .djep-playlisttitle {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
@@ -8037,7 +8037,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #sa
   align-items: center;
   gap: 8px;
   justify-content: flex-end;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   line-height: 1.3;
@@ -8056,7 +8056,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #sa
   border: 1px solid #d7deea;
   border-radius: 999px;
   background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
-  color: #475467;
+  color: #555555;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -8070,7 +8070,7 @@ body.djep-musicpage-ready .djep-music-native-playlists #saved_playlists_accordio
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #saved_playlists_accordion > .ui-accordion-header .djep-music-playlist-edit:hover {
   border-color: #c7d2e3;
   background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
-  color: #344054;
+  color: #3a3a3a;
 }
 
 body.djep-musicpage-ready .djep-music-native-playlists #saved_playlists_accordion > .ui-accordion-header .djep-music-playlist-edit:focus-visible,
@@ -8089,7 +8089,7 @@ body.djep-musicpage-ready .djep-music-native-playlists #saved_playlists_accordio
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists #saved_playlists_accordion > .ui-accordion-content {
   margin: 0 0 10px;
   padding: 0 !important;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-top: 0;
   border-radius: 0 0 16px 16px;
   background: #fff;
@@ -8134,9 +8134,9 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-native-playlists .dj
 body.djep-musicpage-ready .djep-music-playlist-card,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card {
   overflow: hidden;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 18px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
 }
 
 body.djep-musicpage-ready .djep-music-playlists-stack,
@@ -8152,7 +8152,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card-head {
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
-  border-bottom: 1px solid #edf2f7;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 body.djep-musicpage-ready .djep-music-playlist-card-trigger,
@@ -8173,7 +8173,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card-trigge
 body.djep-musicpage-ready .djep-music-playlist-card-title,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card-title {
   margin: 0;
-  color: #243049;
+  color: #303030;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
@@ -8181,7 +8181,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card-title 
 
 body.djep-musicpage-ready .djep-music-playlist-card-chevron,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-playlist-card-chevron {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 12px;
   line-height: 1;
   transition: transform 0.18s ease;
@@ -8278,10 +8278,10 @@ body.djep-musicpage-ready #requests_accordion > .ui-accordion-header {
   gap: 2px 12px;
   margin: 0 0 8px;
   padding: 12px 14px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
-  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  color: #2a2a2a;
   box-shadow: 0 10px 20px rgba(17, 26, 46, 0.05);
 }
 
@@ -8328,7 +8328,7 @@ body.djep-musicpage-ready #requests_accordion > .ui-accordion-header .ui-accordi
 }
 
 body.djep-musicpage-ready #requests_accordion > .ui-accordion-header .djep-playlisttitle {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
@@ -8339,7 +8339,7 @@ body.djep-musicpage-ready #requests_accordion > .ui-accordion-header .djep-playl
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-end;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   line-height: 1.3;
@@ -8357,10 +8357,10 @@ body.djep-musicpage-ready .djep-music-limit-chip {
   align-items: center;
   min-height: 28px;
   padding: 0 10px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 999px;
   background: #f8fafc;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -8369,18 +8369,18 @@ body.djep-musicpage-ready .djep-music-limit-chip {
 }
 
 body.djep-musicpage-ready .djep-music-limit-chip-empty {
-  color: #98a2b3;
-  background: #fbfcfe;
+  color: #9b9b9b;
+  background: #fbfbfb;
 }
 
 body.djep-musicpage-ready .djep-music-playlist-divider {
-  color: #98a2b3;
+  color: #9b9b9b;
 }
 
 body.djep-musicpage-ready #requests_accordion > .ui-accordion-content {
   margin: 0 0 10px;
   padding: 0 !important;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-top: 0;
   border-radius: 0 0 16px 16px;
   background: #fff;
@@ -8419,10 +8419,10 @@ body.djep-musicpage-ready .djep-special_song_header {
   align-items: center;
   margin: 0 0 8px;
   padding: 12px 14px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
-  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  color: #2a2a2a;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
@@ -8448,25 +8448,25 @@ body.djep-musicpage-ready .djep-special_song_header .ui-accordion-header-icon + 
 body.djep-musicpage-ready .djep-special_song_content_div {
   margin: 0 0 10px;
   padding: 14px 16px !important;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-top: 0;
   border-radius: 0 0 16px 16px;
   background: #fff;
   box-shadow: 0 10px 20px rgba(17, 26, 46, 0.05);
   overflow: hidden;
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 13px;
 }
 
 body.djep-musicpage-ready .djep-special_song_content_div input[type="text"],
 body.djep-musicpage-ready .djep-special_song_content_div textarea {
   width: 100%;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 10px;
   padding: 8px 12px;
   font-size: 13px;
   background: #fff;
-  color: #1f2937;
+  color: #2a2a2a;
 }
 
 body.djep-musicpage-ready .djep-special_song_content_div input[type="text"]:focus,
@@ -8512,11 +8512,11 @@ body.djep-musicpage-ready .djep-special_song_content_div [id^="song_div_"],
 body.djep-musicpage-ready .djep-special_song_content_div [id^="comments_div_"] {
   min-height: 38px;
   padding: 8px 12px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 10px;
   background: #fff;
   font-size: 13px;
-  color: #1f2937;
+  color: #2a2a2a;
 }
 
 body.djep-musicpage-ready .djep-special_song_content_div [id^="comments_div_"] {
@@ -8530,10 +8530,10 @@ body.djep-musicpage-ready [id^="none_selected_div_"] {
   min-height: 96px;
   margin: 0 0 14px;
   padding: 14px;
-  border: 1px dashed #d8dfeb;
+  border: 1px dashed #dedede;
   border-radius: 14px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafc 100%);
-  color: #667085;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
 }
@@ -8553,7 +8553,7 @@ body.djep-musicpage-ready .djep-specialsongbutton {
   justify-content: center;
   height: 36px;
   padding: 0 18px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 10px;
   background: #f8fafc;
   color: #475569;
@@ -8562,7 +8562,7 @@ body.djep-musicpage-ready .djep-specialsongbutton {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 1px 0 #eef1f7, 0 6px 12px rgba(17, 26, 46, 0.04);
+  box-shadow: 0 1px 0 #efefef, 0 6px 12px rgba(17, 26, 46, 0.04);
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease,
     box-shadow 0.15s ease, transform 0.15s ease;
   -webkit-appearance: none;
@@ -8581,7 +8581,7 @@ body.djep-musicpage-ready .djep-specialsongbutton:hover {
 body.djep-musicpage-ready .djep-specialsongitemsaved {
   margin: 0 0 14px;
   padding: 10px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 14px;
   background: #fff;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05);
@@ -8692,10 +8692,10 @@ body.djep-musicpage-ready .djep-music-request-empty {
   min-height: 112px;
   margin: 10px;
   padding: 14px 16px;
-  border: 1px dashed #d8dfeb;
+  border: 1px dashed #dedede;
   border-radius: 16px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafc 100%);
-  color: #667085;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.55;
@@ -8703,7 +8703,7 @@ body.djep-musicpage-ready .djep-music-request-empty {
 }
 
 body.djep-musicpage-ready .djep-music-request-empty strong {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 13px;
   font-weight: 700;
 }
@@ -8726,7 +8726,7 @@ body.djep-musicpage-ready .djep-playlist-listing tr {
 }
 
 body.djep-musicpage-ready .djep-playlist-listing tr + tr td {
-  border-top: 1px solid #edf2f7;
+  border-top: 1px solid #f0f0f0;
 }
 
 body.djep-musicpage-ready .djep-playlist-listing tr:hover {
@@ -8735,7 +8735,7 @@ body.djep-musicpage-ready .djep-playlist-listing tr:hover {
 
 body.djep-musicpage-ready .djep-playlist-listing td {
   padding: 9px 14px !important;
-  color: #243049;
+  color: #303030;
   font-size: 12px;
   font-weight: 600;
   white-space: normal;
@@ -8768,7 +8768,7 @@ body.djep-musicpage-ready .djep-music-playlist-line {
 }
 
 body.djep-musicpage-ready .djep-music-playlist-song {
-  color: #243049;
+  color: #303030;
   font-size: 12px;
   font-weight: 700;
   overflow: hidden;
@@ -8777,12 +8777,12 @@ body.djep-musicpage-ready .djep-music-playlist-song {
 }
 
 body.djep-musicpage-ready .djep-music-playlist-separator {
-  color: #98a2b3;
+  color: #9b9b9b;
   flex: 0 0 auto;
 }
 
 body.djep-musicpage-ready .djep-music-playlist-artist {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 600;
   overflow: hidden;
@@ -8791,7 +8791,7 @@ body.djep-musicpage-ready .djep-music-playlist-artist {
 }
 
 body.djep-musicpage-ready .djep-playlistboxtext {
-  color: #243049;
+  color: #303030;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
@@ -8799,13 +8799,13 @@ body.djep-musicpage-ready .djep-playlistboxtext {
 
 body.djep-musicpage-ready .djep-playlist-listing td:first-child .djep-playlistboxtext,
 body.djep-musicpage-ready .djep-playlist-listing td:first-child {
-  color: #667085;
+  color: #6f6f6f;
   font-weight: 600;
 }
 
 body.djep-musicpage-ready .djep-playlist-listing td:last-child .djep-playlistboxtext,
 body.djep-musicpage-ready .djep-playlist-listing td:last-child {
-  color: #243049;
+  color: #303030;
   font-weight: 700;
 }
 
@@ -8847,7 +8847,7 @@ body.djep-musicpage-ready #preview_song_modal_div img {
   width: 100% !important;
   margin: 0 !important;
   padding: 8px !important;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05);
@@ -8857,14 +8857,14 @@ body.djep-musicpage-ready #preview_song_modal_div img {
 }
 
 body.djep-musicpage-ready #preview_song_modal_div img:hover {
-  border-color: #c7d1e0;
+  border-color: #d0d0d0;
   background: #f8fafc;
   box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
 }
 
 body.djep-musicpage-ready #artist_song_display_div {
   margin-top: 18px;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 15px !important;
   font-weight: 600 !important;
   line-height: 1.55 !important;
@@ -8883,7 +8883,7 @@ body.djep-musicpage-ready #songpreviewurl p {
 }
 
 body.djep-musicpage-ready #songpreviewurl small {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -8921,7 +8921,7 @@ body.djep-musicpage-ready #confirm_song_deletion_div td,
 body.djep-musicpage-ready #warning_div td,
 body.djep-musicpage-ready #confirm_playlist_deletion_div td,
 body.djep-musicpage-ready #edit_playlist_window td {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 14px;
 }
 
@@ -8935,7 +8935,7 @@ body.djep-musicpage-ready #edit_playlist_window tr + tr td {
 
 body.djep-musicpage-ready #edit_song_div td:first-child {
   width: 128px !important;
-  color: #475467 !important;
+  color: #555555 !important;
   font-weight: 700 !important;
   vertical-align: top !important;
   white-space: nowrap !important;
@@ -8944,14 +8944,14 @@ body.djep-musicpage-ready #edit_song_div td:first-child {
 
 body.djep-musicpage-ready #edit_song_div td:last-child,
 body.djep-musicpage-ready #edit_playlist_window td:last-child {
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   font-size: 14px !important;
   font-weight: 600 !important;
 }
 
 body.djep-musicpage-ready #edit_playlist_window td:first-child {
   width: 92px !important;
-  color: #475467 !important;
+  color: #555555 !important;
   font-weight: 700 !important;
   vertical-align: top !important;
   white-space: normal !important;
@@ -8966,10 +8966,10 @@ body.djep-musicpage-ready #edit_song_div select,
 body.djep-musicpage-ready #edit_song_div textarea {
   width: 100% !important;
   max-width: none !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 14px !important;
   background: #ffffff !important;
-  color: #101828 !important;
+  color: #111111 !important;
   font-size: 14px !important;
   line-height: 1.45 !important;
   box-shadow: none !important;
@@ -8981,8 +8981,8 @@ body.djep-musicpage-ready #edit_song_div select {
   appearance: none !important;
   -webkit-appearance: none !important;
   background-image:
-    linear-gradient(45deg, transparent 50%, #667085 50%),
-    linear-gradient(135deg, #667085 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, #6f6f6f 50%),
+    linear-gradient(135deg, #6f6f6f 50%, transparent 50%);
   background-position:
     calc(100% - 20px) calc(50% - 3px),
     calc(100% - 14px) calc(50% - 3px);
@@ -8999,14 +8999,14 @@ body.djep-musicpage-ready #edit_song_div textarea {
 body.djep-musicpage-ready #edit_song_div select:focus,
 body.djep-musicpage-ready #edit_song_div textarea:focus {
   outline: none !important;
-  border-color: #b8c3d6 !important;
+  border-color: #c3c3c3 !important;
   box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.18) !important;
 }
 
 body.djep-musicpage-ready #confirm_song_deletion_div td[colspan="2"],
 body.djep-musicpage-ready #confirm_playlist_deletion_div td[colspan="2"],
 body.djep-musicpage-ready #warning_div td[colspan="2"] {
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   line-height: 1.5 !important;
@@ -9067,11 +9067,11 @@ body.djep-musicpage-ready #confirm_playlist_deletion_div input.djep-actionbutton
   min-width: 152px !important;
   min-height: 46px !important;
   margin-top: 8px !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 999px !important;
   background: #ffffff !important;
   background-image: none !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-family: var(--djep-font-family) !important;
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05) !important;
   text-transform: none !important;
@@ -9084,9 +9084,9 @@ body.djep-musicpage-ready #confirm_song_deletion_div input.djep-actionbutton:hov
 body.djep-musicpage-ready #warning_div input.djep-actionbutton:hover,
 body.djep-musicpage-ready #edit_playlist_window input.djep-actionbutton:hover,
 body.djep-musicpage-ready #confirm_playlist_deletion_div input.djep-actionbutton:hover {
-  border-color: #c7d1e0 !important;
+  border-color: #d0d0d0 !important;
   background: #f8fafc !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08) !important;
 }
 
@@ -9290,7 +9290,7 @@ body.djep-musicpage-ready #confirm_playlist_deletion_div td[colspan="2"] > table
 
   body.djep-musicpage-ready .djep-playlist-listing > tbody > tr + tr,
   form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing > tbody > tr + tr {
-    border-top: 1px solid #edf2f7;
+    border-top: 1px solid #f0f0f0;
   }
 
   body.djep-musicpage-ready .djep-playlist-listing > tbody > tr + tr td,
@@ -9419,7 +9419,7 @@ form[name="ep_form"][action*="browsemusic.asp"] > .djep-music-panel {
   width: min(100%, 1190px) !important;
   margin: 0 auto;
   padding: 24px 24px 26px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -9458,9 +9458,9 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-selectmusictable > tbody >
 form[name="ep_form"][action*="browsemusic.asp"] #tabs,
 form[name="ep_form"][action*="browsemusic.asp"] #your_requests_content {
   padding: 18px 12px 20px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 26px;
-  background: linear-gradient(180deg, #fcfdff 0%, #f7f9fc 100%);
+  background: linear-gradient(180deg, #fcfcfc 0%, #f7f9fc 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
@@ -9502,7 +9502,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #tabs_hider_helper a {
   border-radius: 999px !important;
   background: transparent !important;
   background-image: none !important;
-  color: #526078 !important;
+  color: #5e5e5e !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
@@ -9527,11 +9527,11 @@ body.djep-musicpage-ready .djep-toplistbuttons3 {
   justify-content: center;
   min-height: 34px;
   padding: 0 12px;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 12px !important;
   background: #fff !important;
   background-image: none !important;
-  color: #475467 !important;
+  color: #555555 !important;
   font-size: 12px !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
@@ -9549,10 +9549,10 @@ body.djep-musicpage-ready .djep-artistsongbuttonswide:hover,
 body.djep-musicpage-ready .djep-toplistbuttons:hover,
 body.djep-musicpage-ready .djep-toplistbuttons2:hover,
 body.djep-musicpage-ready .djep-toplistbuttons3:hover {
-  border-color: #c6cfde !important;
+  border-color: #c9c9c9 !important;
   background: #f8fafc !important;
   background-image: none !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: 0 8px 16px rgba(17, 26, 46, 0.06) !important;
 }
 
@@ -9600,8 +9600,8 @@ body.djep-musicpage-ready .djep-toplistbuttons_active,
 body.djep-musicpage-ready .djep-toplistbuttons2_active,
 body.djep-musicpage-ready .djep-toplistbuttons3_active {
   border-color: transparent !important;
-  background: #243049 !important;
-  background-color: #243049 !important;
+  background: #303030 !important;
+  background-color: #303030 !important;
   background-image: none !important;
   color: #ffffff !important;
   box-shadow: 0 10px 18px rgba(17, 26, 46, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
@@ -9618,8 +9618,8 @@ body.djep-musicpage-ready .djep-toplistbuttons_active:hover,
 body.djep-musicpage-ready .djep-toplistbuttons2_active:hover,
 body.djep-musicpage-ready .djep-toplistbuttons3_active:hover {
   border-color: transparent !important;
-  background: #243049 !important;
-  background-color: #243049 !important;
+  background: #303030 !important;
+  background-color: #303030 !important;
   background-image: none !important;
   color: #ffffff !important;
   box-shadow: 0 10px 18px rgba(17, 26, 46, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
@@ -9660,7 +9660,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #tabs textarea {
   border: 1px solid rgba(198, 207, 222, 0.92) !important;
   border-radius: 12px !important;
   background: #fff !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03) !important;
 }
 
@@ -9668,10 +9668,10 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-searchbutton {
   min-width: 96px;
   min-height: 44px;
   padding: 0 16px !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 12px !important;
   background: #fff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -9682,10 +9682,10 @@ form[name="ep_form"][action*="browsemusic.asp"] #tabs .djep-tabs-all > div[style
   width: auto !important;
   margin: 14px 0 0 !important;
   padding: 14px 16px !important;
-  border: 1px dashed #d6deea !important;
+  border: 1px dashed #dedede !important;
   border-radius: 16px !important;
-  background: #fcfdff !important;
-  color: #667085 !important;
+  background: #fcfcfc !important;
+  color: #6f6f6f !important;
   font-size: 13px !important;
   line-height: 1.55 !important;
 }
@@ -9699,7 +9699,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-requestonlytitle {
 
 form[name="ep_form"][action*="browsemusic.asp"] .djep-requestonlytitle p {
   margin: 0 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 12px !important;
   font-weight: 800 !important;
   letter-spacing: 0.1em !important;
@@ -9723,10 +9723,10 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
   gap: 6px 12px;
   margin: 0 0 10px;
   padding: 14px 16px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfe 100%);
-  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  color: #2a2a2a;
   box-shadow: 0 10px 20px rgba(17, 26, 46, 0.05);
 }
 
@@ -9747,7 +9747,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
 }
 
 form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accordion-header .djep-playlisttitle {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
@@ -9755,7 +9755,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
 }
 
 form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accordion-header .djep-playlistlimits {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 12px;
   font-weight: 700;
   text-align: right;
@@ -9764,7 +9764,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
 form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accordion-content {
   margin: 0 0 12px;
   padding: 0 !important;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-top: 0;
   border-radius: 0 0 16px 16px;
   background: #fff;
@@ -9774,10 +9774,10 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
 
 form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing td {
   padding: 14px 16px !important;
-  color: #243049;
+  color: #303030;
   font-size: 14px;
   font-weight: 600;
-  border-top: 1px solid #edf2f7;
+  border-top: 1px solid #f0f0f0;
 }
 
 form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing tr:first-child td {
@@ -9785,12 +9785,12 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing tr:first-
 }
 
 form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing td:first-child {
-  color: #667085;
+  color: #6f6f6f;
   font-weight: 600;
 }
 
 form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing td:last-child {
-  color: #243049;
+  color: #303030;
   font-weight: 700;
 }
 
@@ -9835,7 +9835,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-shell-head {
 
 body.djep-musicpage-ready .djep-music-shell-head-label,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-shell-head-label {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -9845,7 +9845,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-shell-head-label {
 body.djep-musicpage-ready .djep-music-shell-head-copy,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-shell-head-copy {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -9886,7 +9886,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-meta-chip {
   gap: 8px;
   min-height: 34px;
   padding: 0 12px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 999px;
   background: #f8fafc;
   font-family: var(--djep-font-family);
@@ -9894,7 +9894,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-meta-chip {
 
 body.djep-musicpage-ready .djep-music-meta-chip-label,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-meta-chip-label {
-  color: #98a2b3;
+  color: #9b9b9b;
   font-family: var(--djep-font-family);
   font-size: 11px;
   font-weight: 800;
@@ -9904,7 +9904,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-meta-chip-label {
 
 body.djep-musicpage-ready .djep-music-meta-chip-value,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-music-meta-chip-value {
-  color: #344054;
+  color: #3a3a3a;
   font-family: var(--djep-font-family);
   font-size: 13px;
   font-weight: 700;
@@ -9927,11 +9927,11 @@ body.djep-musicpage-ready #tabs,
 form[name="ep_form"][action*="browsemusic.asp"] #tabs {
   display: grid;
   gap: 12px;
-  border: 1.25px solid #dbe3ef !important;
+  border: 1.25px solid #e2e2e2 !important;
   border-radius: 26px !important;
-  background: linear-gradient(180deg, #fcfdff 0%, #f7f9fc 100%) !important;
+  background: linear-gradient(180deg, #fcfcfc 0%, #f7f9fc 100%) !important;
   box-shadow:
-    inset 0 0 0 1.25px #dbe3ef,
+    inset 0 0 0 1.25px #e2e2e2,
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
@@ -10039,7 +10039,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-music-control-table tr.dje
 form[name="ep_form"][action*="browsemusic.asp"] #tabs .djep-tabs-all > table:first-of-type > tbody > tr:has(.djep-musicsearchform) td:first-child,
 form[name="ep_form"][action*="browsemusic.asp"] #tabs .djep-tabs-all > table:first-of-type > tbody > tr:has(.djep-songideasdropdown) td:first-child {
   width: auto;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -10195,7 +10195,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #requests_accordion > .ui-accord
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -10251,7 +10251,7 @@ form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing td:last-c
 
 body.djep-musicpage-ready .djep-playlist-listing tr + tr,
 form[name="ep_form"][action*="browsemusic.asp"] .djep-playlist-listing tr + tr {
-  border-top: 1px solid #edf2f7;
+  border-top: 1px solid #f0f0f0;
 }
 
 @media (max-width: 991px) {
@@ -10336,16 +10336,16 @@ body.djep-guestrequestspage-ready .djep-guestrequests-workspace {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-hero {
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
-  background: linear-gradient(180deg, #fbfcff 0%, #f9fbfd 100%);
+  background: linear-gradient(180deg, #fbfbfb 0%, #f9fbfd 100%);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
   padding: 22px 24px 24px;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-hero-title {
   margin-top: 8px;
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 21px;
   font-weight: 740;
   letter-spacing: -0.025em;
@@ -10358,7 +10358,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-hero .djep-guestrequests-c
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-card {
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -10377,7 +10377,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-heading-main {
 
 body.djep-guestrequestspage-ready .djep-guestrequests-card-label,
 body.djep-guestrequestspage-ready .djep-guestrequests-info-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -10385,7 +10385,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-info-label {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-card-title {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 22px;
   font-weight: 750;
   letter-spacing: -0.02em;
@@ -10394,7 +10394,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-card-title {
 
 body.djep-guestrequestspage-ready .djep-guestrequests-copy {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.65;
@@ -10435,7 +10435,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-info-copy {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-info-value {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.45;
@@ -10446,10 +10446,10 @@ body.djep-guestrequestspage-ready .djep-guestrequests-utility-button {
   min-width: 88px;
   min-height: 38px;
   padding: 0 14px;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 999px !important;
   background: #fff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
@@ -10462,9 +10462,9 @@ body.djep-guestrequestspage-ready .djep-guestrequests-utility-button {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-utility-button:hover {
-  border-color: #c6cfde !important;
+  border-color: #c9c9c9 !important;
   background: #f8fafc !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-toggle {
@@ -10476,7 +10476,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-toggle {
   padding: 12px 14px;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  background: #fbfcfe;
+  background: #fbfbfb;
   cursor: pointer;
 }
 
@@ -10497,14 +10497,14 @@ body.djep-guestrequestspage-ready .djep-guestrequests-toggle-body {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-toggle-title {
-  color: #1f2937;
+  color: #2a2a2a;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-toggle-help {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.55;
@@ -10515,7 +10515,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-toggle-switch {
   width: 52px;
   height: 30px;
   border-radius: 999px;
-  background: #d0d7e4;
+  background: #d7d7d7;
   transition: background-color 0.2s ease;
 }
 
@@ -10533,7 +10533,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-toggle-switch::after {
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-toggle input[type="checkbox"]:checked + .djep-guestrequests-toggle-body + .djep-guestrequests-toggle-switch {
-  background: #667085;
+  background: #6f6f6f;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-toggle input[type="checkbox"]:checked + .djep-guestrequests-toggle-body + .djep-guestrequests-toggle-switch::after {
@@ -10552,19 +10552,19 @@ body.djep-guestrequestspage-ready .djep-guestrequests-item {
   padding: 16px 18px;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
-  background: #fbfcfe;
+  background: #fbfbfb;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-item-title,
 body.djep-guestrequestspage-ready .djep-guestrequests-empty-title {
-  color: #101729;
+  color: #111111;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.35;
 }
 
 body.djep-guestrequestspage-ready .djep-guestrequests-item-meta {
-  color: #475467;
+  color: #555555;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
@@ -10573,7 +10573,7 @@ body.djep-guestrequestspage-ready .djep-guestrequests-item-meta {
 body.djep-guestrequestspage-ready .djep-guestrequests-item-note,
 body.djep-guestrequestspage-ready .djep-guestrequests-empty p {
   margin: 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
@@ -10581,9 +10581,9 @@ body.djep-guestrequestspage-ready .djep-guestrequests-empty p {
 
 body.djep-guestrequestspage-ready .djep-guestrequests-empty {
   padding: 18px 20px;
-  border: 1px dashed #d6deea;
+  border: 1px dashed #dedede;
   border-radius: 18px;
-  background: #fcfdff;
+  background: #fcfcfc;
 }
 
 @media (max-width: 767px) {
@@ -10681,7 +10681,7 @@ body.djep-songrequestspage-ready .djep-songrequests-empty-group {
 }
 
 body.djep-songrequestspage-ready .djep-songrequests-group-label {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -10695,7 +10695,7 @@ body.djep-songrequestspage-ready .djep-songrequests-empty-grid {
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-card {
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
   background: rgba(255,255,255,.98);
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
@@ -10712,7 +10712,7 @@ body.djep-songrequestspage-ready .djep-songrequest-card-header {
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-card-title {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -10741,7 +10741,7 @@ body.djep-songrequestspage-ready .djep-songrequest-item {
   padding: 14px 16px;
   border: 1px solid rgba(224, 230, 239, 0.96);
   border-radius: 18px;
-  background: #fbfcfe;
+  background: #fbfbfb;
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-item-copy {
@@ -10751,14 +10751,14 @@ body.djep-songrequestspage-ready .djep-songrequest-item-copy {
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-item-title {
-  color: #101729;
+  color: #111111;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.3;
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-item-artist {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
@@ -10766,7 +10766,7 @@ body.djep-songrequestspage-ready .djep-songrequest-item-artist {
 
 body.djep-songrequestspage-ready .djep-songrequest-item-note {
   margin: 2px 0 0;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.55;
@@ -10784,10 +10784,10 @@ body.djep-songrequestspage-ready .djep-songrequest-action {
   min-width: 78px;
   min-height: 40px;
   padding: 0 14px;
-  border: 1px solid #d8dfeb;
+  border: 1px solid #dedede;
   border-radius: 999px;
   background: #fff;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
@@ -10807,14 +10807,14 @@ body.djep-songrequestspage-ready .djep-songrequest-action::after {
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-action:hover {
-  border-color: #c6cfde;
+  border-color: #c9c9c9;
   background: #f8fafc;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 body.djep-songrequestspage-ready .djep-songrequest-empty {
   padding: 0 24px 24px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
@@ -10826,7 +10826,7 @@ body.djep-songrequestspage-ready .djep-songrequest-card-empty .djep-songrequest-
 
 body.djep-songrequestspage-ready .djep-songrequest-card-empty {
   box-shadow: none;
-  background: #fcfdff;
+  background: #fcfcfc;
   min-height: 132px;
 }
 
@@ -10853,7 +10853,7 @@ body.djep-songrequestspage-ready #confirm_song_deletion_div.ui-dialog-content {
 
 body.djep-songrequestspage-ready #edit_song_div td,
 body.djep-songrequestspage-ready #confirm_song_deletion_div td {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 14px;
 }
 
@@ -10864,7 +10864,7 @@ body.djep-songrequestspage-ready #confirm_song_deletion_div tr + tr td {
 
 body.djep-songrequestspage-ready #edit_song_div td:first-child {
   width: 128px !important;
-  color: #475467 !important;
+  color: #555555 !important;
   font-weight: 700 !important;
   vertical-align: top !important;
   white-space: nowrap !important;
@@ -10872,13 +10872,13 @@ body.djep-songrequestspage-ready #edit_song_div td:first-child {
 }
 
 body.djep-songrequestspage-ready #edit_song_div td:last-child {
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   font-size: 14px !important;
   font-weight: 600 !important;
 }
 
 body.djep-songrequestspage-ready #confirm_song_deletion_div td[colspan="2"] {
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   line-height: 1.5 !important;
@@ -10893,10 +10893,10 @@ body.djep-songrequestspage-ready #edit_song_div textarea {
 
 body.djep-songrequestspage-ready #edit_song_div select,
 body.djep-songrequestspage-ready #edit_song_div textarea {
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 14px !important;
   background: #ffffff !important;
-  color: #101828 !important;
+  color: #111111 !important;
   font-size: 14px !important;
   line-height: 1.45 !important;
   box-shadow: none !important;
@@ -10908,8 +10908,8 @@ body.djep-songrequestspage-ready #edit_song_div select {
   appearance: none !important;
   -webkit-appearance: none !important;
   background-image:
-    linear-gradient(45deg, transparent 50%, #667085 50%),
-    linear-gradient(135deg, #667085 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, #6f6f6f 50%),
+    linear-gradient(135deg, #6f6f6f 50%, transparent 50%);
   background-position:
     calc(100% - 20px) calc(50% - 3px),
     calc(100% - 14px) calc(50% - 3px);
@@ -10926,7 +10926,7 @@ body.djep-songrequestspage-ready #edit_song_div textarea {
 body.djep-songrequestspage-ready #edit_song_div select:focus,
 body.djep-songrequestspage-ready #edit_song_div textarea:focus {
   outline: none !important;
-  border-color: #b8c3d6 !important;
+  border-color: #c3c3c3 !important;
   box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.18) !important;
 }
 
@@ -10935,11 +10935,11 @@ body.djep-songrequestspage-ready #confirm_song_deletion_div input.djep-actionbut
   min-width: 124px !important;
   min-height: 46px !important;
   margin-top: 8px !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 999px !important;
   background: #ffffff !important;
   background-image: none !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-family: var(--djep-font-family) !important;
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05) !important;
   text-transform: none !important;
@@ -10949,9 +10949,9 @@ body.djep-songrequestspage-ready #confirm_song_deletion_div input.djep-actionbut
 
 body.djep-songrequestspage-ready #edit_song_div input.djep-actionbutton:hover,
 body.djep-songrequestspage-ready #confirm_song_deletion_div input.djep-actionbutton:hover {
-  border-color: #c7d1e0 !important;
+  border-color: #d0d0d0 !important;
   background: #f8fafc !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08) !important;
 }
 
@@ -11040,7 +11040,7 @@ body.djep-planningformpage-ready .djep-planningform-checkbox-option {
   display: inline-flex;
   align-items: flex-start;
   gap: 10px;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.35;
@@ -11280,7 +11280,7 @@ body.djep-planningformpage-ready .djep-planningform-save-footer p {
   body.djep-body {
     background:
       radial-gradient(circle at top left, rgb(from var(--djep-brand) r g b / 0.08), transparent 24%),
-      linear-gradient(180deg, #f7f8fc 0%, #eef1f7 100%) !important;
+      linear-gradient(180deg, #f7f7f7 0%, #efefef 100%) !important;
   }
 
   #djep-page {
@@ -11640,7 +11640,7 @@ body.djep-planningformpage-ready .djep-planningform-save-footer p {
 }
 
 #page_eventdetails .djep-eventdetails-card-staff #djep-event_employee_table td:last-child {
-  color: #475467 !important;
+  color: #555555 !important;
 }
 
 #page_eventdetails .djep-eventdetails-card-staff img.djep-profile_image {
@@ -11676,7 +11676,7 @@ body.djep-planningformpage-ready .djep-planningform-save-footer p {
 #page_eventdetails .djep-paymenthistorybox .djep-paymentdetailsblock:first-of-type table::after {
   position: absolute !important;
   top: 0 !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 0.64rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.06em !important;
@@ -11754,18 +11754,18 @@ body.djep-planningformpage-ready .djep-planningform-save-footer p {
 
 #page_eventdetails .djep-paymenthistorybox .djep-paymentdetailsblock table td:first-child {
   grid-column: 1 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-weight: 600 !important;
 }
 
 #page_eventdetails .djep-paymenthistorybox .djep-paymentdetailsblock table td:nth-child(2) {
   grid-column: 2 !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 #page_eventdetails .djep-paymenthistorybox .djep-paymentdetailsblock table td:last-child {
   grid-column: 4 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-align: right !important;
 }
 
@@ -11842,11 +11842,11 @@ body.djep-timelinepage-ready .djep-timeline-panel > .djep-titlebar {
   align-items: start;
   margin: 20px auto 0 !important;
   padding: 30px 24px 22px;
-  border: 1px solid #dbe3ef;
+  border: 1px solid #e2e2e2;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,253,.98));
   box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05);
-  color: #101729;
+  color: #111111;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.2;
@@ -11858,7 +11858,7 @@ body.djep-timelinepage-ready .djep-timeline-panel > .djep-titlebar .pull-right {
   justify-items: end;
   gap: 8px;
   margin: 0 !important;
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px !important;
   font-weight: 600 !important;
   line-height: 1.35;
@@ -11878,7 +11878,7 @@ body.djep-timelinepage-ready .djep-timeline-toolbar-intro {
 }
 
 body.djep-timelinepage-ready .djep-timeline-toolbar-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -11886,7 +11886,7 @@ body.djep-timelinepage-ready .djep-timeline-toolbar-label {
 }
 
 body.djep-timelinepage-ready .djep-timeline-toolbar-title {
-  color: #101729;
+  color: #111111;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.12;
@@ -11896,7 +11896,7 @@ body.djep-timelinepage-ready .djep-timeline-toolbar-title {
 body.djep-timelinepage-ready .djep-timeline-toolbar-note {
   margin: 0;
   max-width: 720px;
-  color: #667085;
+  color: #6f6f6f;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.65;
@@ -11917,7 +11917,7 @@ body.djep-timelinepage-ready .djep-timeline-meta-card {
 }
 
 body.djep-timelinepage-ready .djep-timeline-meta-label {
-  color: #667085;
+  color: #6f6f6f;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -11926,7 +11926,7 @@ body.djep-timelinepage-ready .djep-timeline-meta-label {
 
 body.djep-timelinepage-ready .djep-timeline-panel > .djep-titlebar #autosavecountdowntimer,
 body.djep-timelinepage-ready .djep-timeline-timer {
-  color: #101729;
+  color: #111111;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
@@ -11942,7 +11942,7 @@ body.djep-timelinepage-ready .djep-timeline-toggle {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #344054;
+  color: #3a3a3a;
   cursor: pointer;
 }
 
@@ -11951,12 +11951,12 @@ body.djep-timelinepage-ready .djep-timeline-toggle input {
   width: 16px;
   min-height: 16px;
   margin: 0;
-  accent-color: #667085;
+  accent-color: #6f6f6f;
 }
 
 body.djep-timelinepage-ready .djep-timeline-panel > .djep-titlebar label[for="toggleautosave"],
 body.djep-timelinepage-ready .djep-timeline-toggle-text {
-  color: #344054;
+  color: #3a3a3a;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -12010,10 +12010,10 @@ body.djep-timelinepage-ready .djep-timeline_instructions {
   width: 100% !important;
   min-height: 88px;
   padding: 12px 16px !important;
-  border: 1px solid #dbe3ef !important;
+  border: 1px solid #e2e2e2 !important;
   border-radius: 20px !important;
   background: linear-gradient(180deg, rgba(248, 250, 253, 0.96), rgba(242, 246, 251, 0.96)) !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 13px !important;
   font-weight: 500 !important;
   line-height: 1.65 !important;
@@ -12029,7 +12029,7 @@ body.djep-timelinepage-ready .djep-timeline-panel #djep-timelineheadline {
   border: 1px solid rgba(198, 207, 222, 0.92) !important;
   border-radius: 20px !important;
   background: #fff !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03);
   font-size: 14px !important;
   font-weight: 600 !important;
@@ -12070,7 +12070,7 @@ body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:first-child .djep-
   padding: 18px 20px !important;
   border: 0 !important;
   background: linear-gradient(180deg, rgba(248, 250, 253, 0.96), rgba(242, 246, 251, 0.96)) !important;
-  color: #111827 !important;
+  color: #1a1a1a !important;
   font-size: 12px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
@@ -12083,7 +12083,7 @@ body.djep-timelinepage-ready .djep-timelineitems {
   padding: 13px 16px;
   border-top: 1px solid rgba(216, 223, 235, 0.72);
   background: #fff;
-  color: #243049;
+  color: #303030;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -12101,7 +12101,7 @@ body.djep-timelinepage-ready .djep-activitytable tr:nth-child(2) .djep-timelinei
 
 body.djep-timelinepage-ready .djep-timelineitems:hover {
   background: #fff !important;
-  color: #243049 !important;
+  color: #303030 !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -12162,7 +12162,7 @@ body.djep-timelinepage-ready .djep-timelinetextbox3 {
   border: 1px solid rgba(198, 207, 222, 0.92) !important;
   border-radius: 12px !important;
   background: #fff !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   box-shadow: inset 0 1px 2px rgba(10, 17, 30, 0.03);
 }
 
@@ -12308,17 +12308,17 @@ body.djep-timelinepage-ready .djep-timeline-cancel-button {
   min-width: 170px !important;
   min-height: 46px !important;
   padding: 0 18px !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 14px !important;
   background: #fff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
 }
 
 body.djep-timelinepage-ready .djep-timeline-cancel-button:hover {
-  border-color: #c6cfde !important;
+  border-color: #c9c9c9 !important;
   background: #f8fafc !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
 }
 
 body.djep-timelinepage-ready .djep-timeline-save-bottom {
@@ -12346,7 +12346,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar #autosavecountdownt
 
 body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleautosave"]::after {
   content: " (offline disabled)";
-  color: #98a2b3;
+  color: #9b9b9b;
   font-weight: 600;
 }
 
@@ -12498,7 +12498,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
     padding: 14px;
     border: 1px solid rgba(216, 223, 235, 0.92);
     border-radius: 18px;
-    background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
     box-shadow: 0 8px 18px rgba(17, 26, 46, 0.05);
   }
 
@@ -12518,7 +12518,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sectiontitle)) > td::before {
     display: block;
     margin-bottom: 6px;
-    color: #76839a;
+    color: #808080;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -12654,7 +12654,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
      intentional structure rather than a random accent color. */
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 30%),
-    linear-gradient(90deg, #2a2f3d 0%, #141118 50%, #2a2f3d 100%) !important;
+    linear-gradient(90deg, #2b2b2b 0%, #141118 50%, #2b2b2b 100%) !important;
   box-shadow: 0 18px 36px rgba(17, 26, 46, 0.12) !important;
   color: #ffffff !important;
 }
@@ -12682,7 +12682,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   white-space: nowrap !important;
   border-radius: 999px !important;
   border-color: rgba(112, 20, 92, 0.42) !important;
-  background-color: #c8218b !important;
+  background-color: #1f1f1f !important;
   background-image: var(--djep-button-bg) !important;
   box-shadow: var(--djep-button-shadow) !important;
   font-family: var(--djep-font-family) !important;
@@ -12828,7 +12828,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  color: #111827 !important;
+  color: #1a1a1a !important;
   font-size: 0.96rem !important;
   font-weight: 800 !important;
   letter-spacing: -0.01em !important;
@@ -12930,12 +12930,12 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-eventdetails-overview-layout .djep-eventdetails-subcard td:first-child {
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 0.88rem !important;
 }
 
 #page_eventdetails .djep-eventdetails-overview-layout .djep-eventdetails-subcard td:last-child {
-  color: #182033 !important;
+  color: #262626 !important;
   font-size: 0.88rem !important;
   font-weight: 700 !important;
   text-align: right !important;
@@ -12972,7 +12972,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails.djep-eventdetails-ready .djep-venue-name {
-  color: #182033 !important;
+  color: #262626 !important;
   font-size: 1rem !important;
   font-weight: 700 !important;
   letter-spacing: -0.015em !important;
@@ -12981,7 +12981,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails.djep-eventdetails-ready .djep-venue-line {
-  color: #5f6880 !important;
+  color: #6b6b6b !important;
   font-size: 0.88rem !important;
   line-height: 1.45 !important;
 }
@@ -13052,7 +13052,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   font-size: 0.96rem !important;
   font-weight: 600 !important;
   letter-spacing: -0.015em !important;
@@ -13119,7 +13119,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-card-pricing td:first-child,
 #page_eventdetails .djep-card-totals td:first-child {
-  color: #556074 !important;
+  color: #626262 !important;
   font-size: 0.88rem !important;
   padding-right: 8px !important;
   padding-top: 9px !important;
@@ -13128,7 +13128,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-card-pricing td:last-child,
 #page_eventdetails .djep-card-totals td:last-child {
-  color: #182033 !important;
+  color: #262626 !important;
   font-weight: 700 !important;
   text-align: right !important;
   padding-top: 9px !important;
@@ -13138,7 +13138,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 #page_eventdetails .djep-fee-section-row td {
   padding-top: 9px !important;
   padding-bottom: 9px !important;
-  color: #111827 !important;
+  color: #1a1a1a !important;
   border-bottom: 0 !important;
 }
 
@@ -13164,7 +13164,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-fee-line-row td:first-child {
-  color: #182033 !important;
+  color: #262626 !important;
   font-size: 0.88rem !important;
   line-height: 1.45 !important;
   padding-top: 9px !important;
@@ -13202,7 +13202,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-total-row td:last-child,
 #page_eventdetails .djep-retainer-row td:last-child {
-  color: #111827 !important;
+  color: #1a1a1a !important;
 }
 
 #page_eventdetails .djep-payments-row td {
@@ -13222,7 +13222,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-balance-row.is-paid td {
-  color: #475467 !important;
+  color: #555555 !important;
 }
 
 #page_eventdetails .djep-card-staff > .djep-titlebarsmall {
@@ -13268,7 +13268,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-staff-member-name {
-  color: #111827 !important;
+  color: #1a1a1a !important;
   font-size: 0.88rem !important;
   font-weight: 700 !important;
   white-space: normal !important;
@@ -13283,7 +13283,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   padding: 4px 10px !important;
   border-radius: 999px !important;
   background: rgba(24, 32, 51, 0.06) !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 0.72rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
@@ -13300,7 +13300,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-staff-attire {
   padding: 14px 2px 0 !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 0.9rem !important;
   line-height: 1.5 !important;
 }
@@ -13340,7 +13340,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  color: #5f6880 !important;
+  color: #6b6b6b !important;
   font-size: 0.88rem !important;
   line-height: 1.65 !important;
 }
@@ -13386,7 +13386,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   padding: 0 10px !important;
   border-radius: 999px !important;
   background: rgba(24, 32, 51, 0.05) !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 0.71rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.09em !important;
@@ -13414,11 +13414,11 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-card-history .djep-paymentdetailsblock table td:nth-child(2) {
-  color: #556074 !important;
+  color: #626262 !important;
 }
 
 #page_eventdetails .djep-card-history .djep-paymentdetailsblock table td:last-child {
-  color: #182033 !important;
+  color: #262626 !important;
   font-weight: 700 !important;
   text-align: right !important;
 }
@@ -13534,7 +13534,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-card-documents table td:first-child {
-  color: #182033 !important;
+  color: #262626 !important;
   font-size: 0.88rem !important;
   font-weight: 700 !important;
   min-width: 0 !important;
@@ -13547,7 +13547,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   padding: 0 10px !important;
   border-radius: 999px !important;
   background: rgb(from var(--djep-brand) r g b / 0.08) !important;
-  color: #9a0a6d !important;
+  color: #2b2b2b !important;
   font-size: 0.73rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
@@ -13566,7 +13566,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   padding: 0 10px !important;
   border-radius: 999px !important;
   background: rgb(from var(--djep-brand) r g b / 0.08) !important;
-  color: #9a0a6d !important;
+  color: #2b2b2b !important;
   font-size: 0.73rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
@@ -13584,7 +13584,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   min-height: 42px !important;
   padding: 10px 18px !important;
   background: #ffffff !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   border-color: rgba(198, 207, 222, 0.9) !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
   font-size: 0.92rem !important;
@@ -13652,7 +13652,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #djep-navigation li a:hover {
-  color: #243049 !important;
+  color: #303030 !important;
   background: rgba(27, 37, 57, 0.06) !important;
   border-color: rgba(215, 223, 236, 0.96) !important;
   box-shadow: none !important;
@@ -13676,7 +13676,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 #djep-content > h2.djep-h2:has(+ #page_eventdetails) > a.djep-planeventbutton.djep-changebutton:hover,
 #djep-content > h2.djep-h2.djep-eventdetails-heading > a.djep-planeventbutton.djep-changebutton:hover {
   color: #fff !important;
-  background-color: #c8218b !important;
+  background-color: #1f1f1f !important;
   background-image: var(--djep-button-bg-hover) !important;
   border-color: rgba(112, 20, 92, 0.5) !important;
   box-shadow: var(--djep-button-shadow-hover) !important;
@@ -13685,7 +13685,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-paymentbutton:hover {
   color: #fff !important;
-  background-color: #c8218b !important;
+  background-color: #1f1f1f !important;
   background-image: var(--djep-button-bg-hover) !important;
   border-color: #ffffff !important;
   box-shadow: var(--djep-button-shadow-hover) !important;
@@ -13694,7 +13694,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-card-action .djep-actionbutton:hover {
   color: #fff !important;
-  background-color: #c8218b !important;
+  background-color: #1f1f1f !important;
   background-image: var(--djep-button-bg-hover) !important;
   border-color: #ffffff !important;
   box-shadow: var(--djep-button-shadow-hover) !important;
@@ -13702,7 +13702,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 }
 
 #page_eventdetails .djep-card-documents .djep-readviewbutton:hover {
-  color: #182033 !important;
+  color: #262626 !important;
   background: #f8fafc !important;
   border-color: rgba(198, 207, 222, 1) !important;
   box-shadow: 0 8px 18px rgba(17, 26, 46, 0.08) !important;
@@ -13729,7 +13729,7 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
 
 #page_eventdetails .djep-relatedfilesbox.djep-empty-state table td::before {
   content: "No related files have been added yet." !important;
-  color: #98a2b3 !important;
+  color: #9b9b9b !important;
   font-size: 0.94rem !important;
   font-style: italic !important;
 }
@@ -14028,14 +14028,14 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
     min-height: 58px !important;
     padding: 8px 10px 8px 14px !important;
     background: #fff !important;
-    border: 1px solid #d8dfeb !important;
+    border: 1px solid #dedede !important;
     border-radius: 16px !important;
     box-shadow: 0 6px 16px rgba(17, 26, 46, 0.04) !important;
   }
 
   body.djep-paymentpage-ready #page_paypal .djep-payment-currency {
     flex: 0 0 auto !important;
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 1.05rem !important;
     font-weight: 800 !important;
   }
@@ -14048,8 +14048,8 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
     min-height: 40px !important;
     padding: 0 !important;
     line-height: 40px !important;
-    color: #101729 !important;
-    -webkit-text-fill-color: #101729 !important;
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     background: transparent !important;
@@ -14058,8 +14058,8 @@ body.djep-local-static .djep-timeline-panel > .djep-titlebar label[for="toggleau
   }
 
   body.djep-paymentpage-ready #page_paypal #amountdollars::placeholder {
-    color: #98a2b3 !important;
-    -webkit-text-fill-color: #98a2b3 !important;
+    color: #9b9b9b !important;
+    -webkit-text-fill-color: #9b9b9b !important;
     opacity: 1 !important;
   }
 
@@ -14348,7 +14348,7 @@ body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sec
   padding: 14px !important;
   border: 1px solid rgba(216, 223, 235, 0.92) !important;
   border-radius: 18px !important;
-  background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
 }
 
 body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sectiontitle)) > td,
@@ -14365,7 +14365,7 @@ body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sec
 body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sectiontitle)) > td::before {
   display: block !important;
   margin-bottom: 6px !important;
-  color: #76839a !important;
+  color: #808080 !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
@@ -14416,14 +14416,14 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-entry-panel .djep-payment
   min-height: 58px !important;
   padding: 8px 10px 8px 14px !important;
   background: #fff !important;
-  border: 1px solid #d8dfeb !important;
+  border: 1px solid #dedede !important;
   border-radius: 16px !important;
   box-shadow: 0 6px 16px rgba(17, 26, 46, 0.04) !important;
 }
 
 body.djep-paymentpage-ready #page_paypal .djep-payment-currency {
   flex: 0 0 auto !important;
-  color: #101729 !important;
+  color: #111111 !important;
   font-size: 1.05rem !important;
   font-weight: 800 !important;
 }
@@ -14436,8 +14436,8 @@ body.djep-paymentpage-ready #page_paypal #amountdollars {
   min-height: 40px !important;
   padding: 0 !important;
   line-height: 40px !important;
-  color: #101729 !important;
-  -webkit-text-fill-color: #101729 !important;
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
   font-size: 1.15rem !important;
   font-weight: 700 !important;
   background: transparent !important;
@@ -14446,8 +14446,8 @@ body.djep-paymentpage-ready #page_paypal #amountdollars {
 }
 
 body.djep-paymentpage-ready #page_paypal #amountdollars::placeholder {
-  color: #98a2b3 !important;
-  -webkit-text-fill-color: #98a2b3 !important;
+  color: #9b9b9b !important;
+  -webkit-text-fill-color: #9b9b9b !important;
   opacity: 1 !important;
 }
 
@@ -14553,7 +14553,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .ui-tabs .ui-tabs-nav a {
   gap: 12px !important;
   min-height: 54px !important;
   padding: 10px 12px 10px 14px !important;
-  background: linear-gradient(180deg, #1b2539, #141c2d) !important;
+  background: linear-gradient(180deg, #171717, #0b0b0b) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   position: relative !important;
   z-index: 3 !important;
@@ -14635,7 +14635,7 @@ body.djep-force-mobile-shell-open .djep-force-mobile-shell__toggle-line:nth-chil
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
   background: linear-gradient(180deg, #ffffff, #f8fafc) !important;
-  border: 1px solid #e4e9f2 !important;
+  border: 1px solid #e6e6e6 !important;
   border-radius: 22px !important;
   box-shadow: 0 18px 34px rgba(17, 26, 46, 0.18) !important;
 }
@@ -14657,7 +14657,7 @@ body.djep-force-mobile-shell-open .djep-force-mobile-shell__panel {
 
 .djep-force-mobile-shell__section-title {
   padding: 2px 4px 0 !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.12em !important;
@@ -14678,7 +14678,7 @@ body.djep-force-mobile-shell-open .djep-force-mobile-shell__panel {
   border: 1px solid rgba(216, 223, 235, 0.96) !important;
   border-radius: 16px !important;
   background: #ffffff !important;
-  color: #243049 !important;
+  color: #303030 !important;
   font-size: 13px !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
@@ -14731,14 +14731,14 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-planningformslanding-ready .djep-planningformslanding-title {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 20px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
   }
 
   body.djep-planningformslanding-ready .djep-planningformslanding-subtitle {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 15px !important;
     font-weight: 500 !important;
     line-height: 1.7 !important;
@@ -14763,7 +14763,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
 
   body.djep-planningformslanding-ready .djep-planningformslanding-eyebrow,
   body.djep-planningformslanding-ready .djep-planningformslanding-listlabel {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     letter-spacing: 0.1em !important;
@@ -14771,7 +14771,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-planningformslanding-ready .djep-planningformslanding-herotitle {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 24px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
@@ -14779,7 +14779,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
 
   body.djep-planningformslanding-ready .djep-planningformslanding-copy,
   body.djep-planningformslanding-ready .djep-planningformslanding-emptycopy {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     line-height: 1.7 !important;
@@ -14793,7 +14793,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
     padding: 0 14px !important;
     border-radius: 999px !important;
     background: #f8fafc !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     letter-spacing: 0.05em !important;
@@ -14806,14 +14806,14 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-planningformslanding-ready .djep-planningformslanding-cardtitle {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 18px !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
   }
 
   body.djep-planningformslanding-ready .djep-planningformslanding-cardnote {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     line-height: 1.7 !important;
@@ -14839,7 +14839,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   body.djep-planningformslanding-ready .djep-planningformslanding-action--secondary {
     border: 1px solid rgba(216, 223, 235, 0.96) !important;
     background: #ffffff !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
   }
 }
@@ -14852,7 +14852,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
     gap: 12px !important;
     margin: 0 0 16px !important;
     padding: 18px !important;
-    border: 1px solid #dbe3ef !important;
+    border: 1px solid #e2e2e2 !important;
     border-radius: 22px !important;
     background: rgba(255, 255, 255, 0.98) !important;
     box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05) !important;
@@ -14869,7 +14869,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-timelinepage-ready .djep-timeline-mobile-activity-label {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     letter-spacing: 0.08em !important;
@@ -14877,7 +14877,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-timelinepage-ready .djep-timeline-mobile-activity-title {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 18px !important;
     font-weight: 800 !important;
     line-height: 1.3 !important;
@@ -14885,7 +14885,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
 
   body.djep-timelinepage-ready .djep-timeline-mobile-activity-copy,
   body.djep-timelinepage-ready .djep-timeline-mobile-caption {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 13px !important;
     font-weight: 500 !important;
     line-height: 1.6 !important;
@@ -14917,7 +14917,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-timelinepage-ready .djep-timeline-mobile-activity-summary {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     line-height: 1.5 !important;
@@ -14934,7 +14934,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
     border-radius: 14px !important;
     border: 1px solid rgba(198, 207, 222, 0.96) !important;
     background: #f8fafc !important;
-    color: #243049 !important;
+    color: #303030 !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     line-height: 1.2 !important;
@@ -14959,7 +14959,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-timelinepage-ready .djep-timeline-mobile-summary {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 15px !important;
     font-weight: 800 !important;
     line-height: 1.35 !important;
@@ -15013,7 +15013,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
 
   body.djep-timelinepage-ready .djep-timeline-mobile-row > td::before {
     content: attr(data-djep-mobile-label) !important;
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 11px !important;
     font-weight: 800 !important;
     letter-spacing: 0.1em !important;
@@ -15080,7 +15080,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
     border-radius: 11px !important;
     border: 1px solid rgba(216, 223, 235, 0.96) !important;
     background: #ffffff !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     font-size: 11px !important;
     font-weight: 700 !important;
     line-height: 1.2 !important;
@@ -15116,7 +15116,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
     display: grid !important;
     gap: 14px !important;
     padding: 22px 20px !important;
-    border: 1px solid #dbe3ef !important;
+    border: 1px solid #e2e2e2 !important;
     border-radius: 24px !important;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98)) !important;
     box-shadow: 0 14px 28px rgba(17, 26, 46, 0.05) !important;
@@ -15127,7 +15127,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-songrequestspage-ready .djep-songrequests-empty-eyebrow {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     letter-spacing: 0.1em !important;
@@ -15135,7 +15135,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   }
 
   body.djep-songrequestspage-ready .djep-songrequests-empty-title {
-    color: #101729 !important;
+    color: #111111 !important;
     font-size: 21px !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
@@ -15143,7 +15143,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
 
   body.djep-songrequestspage-ready .djep-songrequests-empty-copy,
   body.djep-songrequestspage-ready .djep-songrequests-empty-note {
-    color: #667085 !important;
+    color: #6f6f6f !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     line-height: 1.65 !important;
@@ -15177,7 +15177,7 @@ body.djep-force-mobile-shell.djep-musicpage-ready .djep-music-request-categories
   body.djep-songrequestspage-ready .djep-songrequests-empty-action--secondary {
     border: 1px solid rgba(216, 223, 235, 0.96) !important;
     background: #ffffff !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     box-shadow: 0 6px 14px rgba(17, 26, 46, 0.05) !important;
   }
 }
@@ -15266,12 +15266,12 @@ body.djep-musicpage-ready .djep-spotify-paste-headtext {
 
 body.djep-musicpage-ready .djep-spotify-paste-headtext strong {
   font-size: 14px;
-  color: #1f2937;
+  color: #2a2a2a;
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-sub {
   font-size: 12px;
-  color: #667085;
+  color: #6f6f6f;
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-row {
@@ -15285,16 +15285,16 @@ body.djep-musicpage-ready .djep-spotify-paste-input {
   min-width: 0;
   padding: 10px 14px;
   font-size: 14px;
-  border: 1px solid #d0d7e4;
+  border: 1px solid #d7d7d7;
   border-radius: 10px;
   background: #fff;
-  color: #1f2937;
+  color: #2a2a2a;
   font-family: inherit;
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-input:focus {
   outline: none;
-  border-color: #cf1c88;
+  border-color: #111111;
   box-shadow: 0 0 0 3px rgba(207, 28, 136, 0.16);
 }
 
@@ -15306,14 +15306,14 @@ body.djep-musicpage-ready .djep-spotify-paste-clear {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   background: #fff;
-  color: #667085;
-  border: 1px solid #d0d7e4;
+  color: #6f6f6f;
+  border: 1px solid #d7d7d7;
   border-radius: 10px;
   cursor: pointer;
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-clear:hover {
-  color: #1f2937;
+  color: #2a2a2a;
   border-color: #a0aec0;
 }
 
@@ -15328,7 +15328,7 @@ body.djep-musicpage-ready .djep-spotify-paste-status[data-kind="error"] {
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-status[data-kind="loading"] {
-  color: #667085;
+  color: #6f6f6f;
 }
 
 body.djep-musicpage-ready .djep-spotify-paste-preview {
@@ -15353,7 +15353,7 @@ body.djep-musicpage-ready #add_your_own_song_helper_div .djep-databasetableheade
   font-family: var(--djep-font-body, "Montserrat", "Segoe UI", Arial, sans-serif) !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-transform: uppercase !important;
   letter-spacing: 0.10em !important;
   padding: 0 !important;
@@ -15377,7 +15377,7 @@ body.djep-musicpage-ready .djep-addown-header {
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   text-transform: uppercase !important;
   letter-spacing: 0.10em !important;
   padding: 0 !important;
@@ -15401,7 +15401,7 @@ body.djep-musicpage-ready .djep-addown-field-full {
 body.djep-musicpage-ready .djep-addown-label {
   font-size: 12px;
   font-weight: 700;
-  color: #475467;
+  color: #555555;
   letter-spacing: 0.04em;
 }
 body.djep-musicpage-ready .djep-addown-control,
@@ -15415,9 +15415,9 @@ body.djep-musicpage-ready textarea.djep-addown-control {
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  color: #1f2937 !important;
+  color: #2a2a2a !important;
   background: #ffffff !important;
-  border: 1px solid #c6cfde !important;
+  border: 1px solid #c9c9c9 !important;
   border-radius: 12px !important;
   box-sizing: border-box !important;
   appearance: none !important;
@@ -15428,7 +15428,7 @@ body.djep-musicpage-ready textarea.djep-addown-control {
   line-height: 1.5 !important;
 }
 body.djep-musicpage-ready select.djep-addown-control {
-  background-image: linear-gradient(45deg, transparent 50%, #667085 50%), linear-gradient(135deg, #667085 50%, transparent 50%) !important;
+  background-image: linear-gradient(45deg, transparent 50%, #6f6f6f 50%), linear-gradient(135deg, #6f6f6f 50%, transparent 50%) !important;
   background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50% !important;
   background-size: 5px 5px, 5px 5px !important;
   background-repeat: no-repeat !important;
@@ -15436,7 +15436,7 @@ body.djep-musicpage-ready select.djep-addown-control {
 }
 body.djep-musicpage-ready .djep-addown-control:focus {
   outline: none !important;
-  border-color: #cf1c88 !important;
+  border-color: #111111 !important;
   box-shadow: 0 0 0 3px rgba(207, 28, 136, 0.16) !important;
 }
 /* Special Song select kept in the form for backend compatibility but hidden. */
@@ -15457,7 +15457,7 @@ body.djep-musicpage-ready .djep-addown-save {
   padding: 10px 28px !important;
   border-radius: 999px !important;
   border: 0 !important;
-  background: linear-gradient(45deg, #550147 0%, #cf1c88 76%) !important;
+  background: linear-gradient(45deg, #550147 0%, #111111 76%) !important;
   color: #ffffff !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -15500,7 +15500,7 @@ body.djep-musicpage-ready .djep-spotify-paste-meta {
 body.djep-musicpage-ready .djep-spotify-paste-title {
   font-size: 13px;
   font-weight: 700;
-  color: #1f2937;
+  color: #2a2a2a;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -15782,13 +15782,13 @@ form[name="ep_form"][action*="browsemusic.asp"] #music_results_table_id .djep-mu
 body.djep-musicpage-ready #music_results_table_id .djep-music-playlist-song,
 form[name="ep_form"][action*="browsemusic.asp"] #music_results_table_id .djep-music-playlist-song {
   font-weight: 700 !important;
-  color: #101828 !important;
+  color: #111111 !important;
   text-transform: none !important;
   letter-spacing: normal !important;
 }
 body.djep-musicpage-ready #music_results_table_id .djep-music-playlist-separator,
 form[name="ep_form"][action*="browsemusic.asp"] #music_results_table_id .djep-music-playlist-separator {
-  color: #9ca3af !important;
+  color: #a0a0a0 !important;
   margin: 0 4px !important;
   font-weight: 400 !important;
   text-transform: none !important;
@@ -15796,7 +15796,7 @@ form[name="ep_form"][action*="browsemusic.asp"] #music_results_table_id .djep-mu
 body.djep-musicpage-ready #music_results_table_id .djep-music-playlist-artist,
 form[name="ep_form"][action*="browsemusic.asp"] #music_results_table_id .djep-music-playlist-artist {
   font-weight: 400 !important;
-  color: #6b7280 !important;
+  color: #737373 !important;
   text-transform: none !important;
   letter-spacing: normal !important;
 }
@@ -16015,18 +16015,18 @@ body.djep-musicpage-ready #tabs-4 #most_requested_music_results > table > tbody 
 form[name="ep_form"][action*="browsemusic.asp"] #tabs-4 #most_requested_music_results > table > tbody > tr:first-child:not(:has(> th)) .djep-music-playlist-song {
   font-size: 12px !important;
   font-weight: 700 !important;
-  color: #243049 !important;
+  color: #303030 !important;
 }
 body.djep-musicpage-ready #tabs-4 #most_requested_music_results > table > tbody > tr:first-child:not(:has(> th)) .djep-music-playlist-artist,
 form[name="ep_form"][action*="browsemusic.asp"] #tabs-4 #most_requested_music_results > table > tbody > tr:first-child:not(:has(> th)) .djep-music-playlist-artist {
   font-size: 12px !important;
   font-weight: 400 !important;
-  color: #6b7280 !important;
+  color: #737373 !important;
 }
 body.djep-musicpage-ready #tabs-4 #most_requested_music_results > table > tbody > tr:first-child:not(:has(> th)) .djep-music-playlist-separator,
 form[name="ep_form"][action*="browsemusic.asp"] #tabs-4 #most_requested_music_results > table > tbody > tr:first-child:not(:has(> th)) .djep-music-playlist-separator {
   font-size: 12px !important;
-  color: #9ca3af !important;
+  color: #a0a0a0 !important;
 }
 
 /* ---------------------------------------------------------------------------
@@ -16088,7 +16088,7 @@ body.djep-paymentpage-ready #page_paypal:has(a.djep-paywithbutton) > .col-xs-12 
   padding: 0 0 18px !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
-  color: var(--djep-text-muted, #5f6880) !important;
+  color: var(--djep-text-muted, #6b6b6b) !important;
   text-align: left !important;
 }
 body.djep-paymentpage-ready #page_paypal:has(a.djep-paywithbutton) > .col-xs-12::after {
@@ -16099,7 +16099,7 @@ body.djep-paymentpage-ready #page_paypal:has(a.djep-paywithbutton) > .col-xs-12:
   height: 3px !important;
   margin-top: 14px !important;
   border-radius: 999px !important;
-  background: linear-gradient(90deg, var(--djep-brand, #c1098a) 0%, var(--djep-brand-soft, #f2d9e9) 100%) !important;
+  background: linear-gradient(90deg, var(--djep-brand, #111111) 0%, var(--djep-brand-soft, #f2d9e9) 100%) !important;
 }
 
 /* Card wrapper — spans the full content width, not centered in a narrow
@@ -16113,7 +16113,7 @@ body.djep-paymentpage-ready #page_paypal .djep-makepaymentbox {
   margin: 0 !important;
   padding: 20px 22px !important;
   background: var(--djep-surface, #ffffff) !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: var(--djep-radius-md, 16px) !important;
   box-shadow: var(--djep-shadow-soft, 0 8px 20px rgba(17, 26, 46, 0.06)) !important;
 }
@@ -16148,7 +16148,7 @@ body.djep-paymentpage-ready a.djep-paywithbutton {
   height: 72px !important;
   padding: 10px 18px !important;
   background: var(--djep-surface, #ffffff) !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   box-shadow: 0 1px 2px rgba(17, 26, 46, 0.04) !important;
   margin: 0 !important;
@@ -16165,13 +16165,13 @@ body.djep-paymentpage-ready a.djep-paywithbutton img {
 }
 body.djep-paymentpage-ready a.djep-paywithbutton:hover,
 body.djep-paymentpage-ready a.djep-paywithbutton:focus-visible {
-  border-color: var(--djep-brand, #c1098a) !important;
+  border-color: var(--djep-brand, #111111) !important;
   box-shadow: 0 8px 18px rgb(from var(--djep-brand) r g b / 0.12) !important;
   transform: translateY(-1px) !important;
   outline: none;
 }
 body.djep-paymentpage-ready a.djep-paywithbutton:focus-visible {
-  outline: 2px solid var(--djep-brand, #c1098a);
+  outline: 2px solid var(--djep-brand, #111111);
   outline-offset: 2px;
 }
 
@@ -16202,7 +16202,7 @@ body.djep-paymentpage-ready #page_paypal form.djep-payment-step-entry .djep-paym
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #344054;
+  color: #3a3a3a;
 }
 
 /* Override the global 12-col grid on .djep-innercontentdiv (line ~2717)
@@ -16237,7 +16237,7 @@ body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .djep-i
   align-items: center !important;
   min-height: 52px !important;
   font-size: 14px !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-weight: 600 !important;
   padding: 0 !important;
 }
@@ -16262,7 +16262,7 @@ body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .form-g
   margin: 0 !important;
   padding: 14px 18px !important;
   background: #f8fafc !important;
-  border: 1px solid #e3e8f1 !important;
+  border: 1px solid #e5e5e5 !important;
   border-radius: 14px !important;
 }
 body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .form-group label.questiontitle {
@@ -16271,7 +16271,7 @@ body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .form-g
   margin: 0 !important;
   padding: 0 !important;
   font-weight: 700 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 14px !important;
   letter-spacing: normal !important;
   text-transform: none !important;
@@ -16290,7 +16290,7 @@ body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .form-g
   padding: 0 !important;
   font-size: 20px !important;
   font-weight: 800 !important;
-  color: var(--djep-brand, #c1098a) !important;
+  color: var(--djep-brand, #111111) !important;
 }
 
 /* Amount input: $ prefix + branded input */
@@ -16302,7 +16302,7 @@ body #page_paypal form.djep-payment-step-entry #payment_amount {
   max-width: 100% !important;
   padding: 0 !important;
   font-size: 16px !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-weight: 700 !important;
 }
 body #page_paypal form.djep-payment-step-entry input#paypal_amount {
@@ -16313,15 +16313,15 @@ body #page_paypal form.djep-payment-step-entry input#paypal_amount {
   padding: 12px 16px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
-  color: #101828 !important;
+  color: #111111 !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.04) !important;
   outline: none !important;
 }
 body #page_paypal form.djep-payment-step-entry input#paypal_amount:focus {
-  border-color: var(--djep-brand, #c1098a) !important;
+  border-color: var(--djep-brand, #111111) !important;
   box-shadow: 0 0 0 3px rgb(from var(--djep-brand) r g b / 0.15) !important;
 }
 
@@ -16348,8 +16348,8 @@ body #page_paypal form.djep-payment-step-entry input.djep-actionbutton {
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
-  background: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
-  background-image: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
+  background: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
+  background-image: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
   background-color: var(--djep-brand) !important;
   border: 1px solid rgb(from var(--djep-brand-dark) r g b / 0.24) !important;
   border-radius: 14px !important;
@@ -16359,7 +16359,7 @@ body #page_paypal form.djep-payment-step-entry input.djep-actionbutton {
 }
 body #page_paypal form.djep-payment-step-entry input#paypal_paynowbutton:hover,
 body #page_paypal form.djep-payment-step-entry input.djep-actionbutton:hover {
-  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #d40d99 0%, #a30776 100%)) !important;
+  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #171717 0%, #242424 100%)) !important;
   box-shadow: var(--djep-button-shadow-hover, 0 16px 30px rgb(from var(--djep-brand) r g b / 0.32)) !important;
   transform: translateY(-1px) !important;
 }
@@ -16368,11 +16368,11 @@ body #page_paypal form.djep-payment-step-entry input.djep-actionbutton:hover {
 body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .djep-innercontentdiv > .col-xs-12:not(.col-sm-6):not(:has(.form-group)):not(:has(input)):not(:has(a)) {
   font-size: 13px !important;
   line-height: 1.55 !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   padding: 14px 16px !important;
   background: #fafbfc !important;
-  border: 1px solid #e3e8f1 !important;
-  border-left: 3px solid var(--djep-brand, #c1098a) !important;
+  border: 1px solid #e5e5e5 !important;
+  border-left: 3px solid var(--djep-brand, #111111) !important;
   border-radius: 12px !important;
   margin-top: 4px !important;
 }
@@ -16390,7 +16390,7 @@ body #page_paypal form.djep-payment-step-entry .djep-payment-entry-panel .djep-i
 body #page_paypal form.djep-payment-step-entry a.djep-readviewbutton {
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   text-decoration: underline !important;
@@ -16400,7 +16400,7 @@ body #page_paypal form.djep-payment-step-entry a.djep-readviewbutton {
   box-shadow: none !important;
 }
 body #page_paypal form.djep-payment-step-entry a.djep-readviewbutton:hover {
-  color: var(--djep-brand, #c1098a) !important;
+  color: var(--djep-brand, #111111) !important;
 }
 
 /* ====================================================================
@@ -16435,7 +16435,7 @@ body #page_paypal .djep-makepaymentbox {
   overflow: visible !important;
   padding: 24px !important;
   background: var(--djep-surface, #ffffff) !important;
-  border: 1px solid var(--djep-border, #e3e8f1) !important;
+  border: 1px solid var(--djep-border, #e5e5e5) !important;
   border-radius: 18px !important;
   box-shadow: var(--djep-shadow-soft, 0 8px 20px rgba(17, 26, 46, 0.06)) !important;
 }
@@ -16477,7 +16477,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #djep-billingcheckbox 
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   background: none !important;
   border: 0 !important;
 }
@@ -16505,7 +16505,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #djep-billingcheckbox 
   align-items: center !important;
   gap: 8px !important;
   margin: 0 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 14px !important;
   font-weight: 500 !important;
 }
@@ -16551,7 +16551,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .dj
   grid-column: auto !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
 }
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .djep-innercontentdiv > .col-xs-6 .address_padding {
   padding: 0 !important;
@@ -16570,7 +16570,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .in
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .input-group .input-group-addon {
   font-size: 16px !important;
   font-weight: 700 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   background: none !important;
   border: 0 !important;
   padding: 0 !important;
@@ -16584,16 +16584,16 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .in
   padding: 12px 16px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
-  color: #101828 !important;
+  color: #111111 !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.04) !important;
   outline: none !important;
 }
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title input[id*="amount" i]:focus,
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .input-group input:focus {
-  border-color: var(--djep-brand, #c1098a) !important;
+  border-color: var(--djep-brand, #111111) !important;
   box-shadow: 0 0 0 3px rgb(from var(--djep-brand) r g b / 0.15) !important;
 }
 
@@ -16606,7 +16606,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .fo
   margin: 4px 0 0 !important;
   padding: 14px 18px !important;
   background: #f8fafc !important;
-  border: 1px solid #e3e8f1 !important;
+  border: 1px solid #e5e5e5 !important;
   border-radius: 14px !important;
 }
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .form-group label.questiontitle {
@@ -16615,7 +16615,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .fo
   margin: 0 !important;
   padding: 0 !important;
   font-weight: 700 !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   font-size: 14px !important;
 }
 body #page_paypal form#nonce-form.djep-payment-step-entry #maincarddiv_title .form-group .col-xs-6 {
@@ -16638,7 +16638,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry > .djep-titlebar {
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   background: none !important;
   border: 0 !important;
   height: auto !important;
@@ -16652,7 +16652,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry #card-container {
   width: 100% !important;
   padding: 14px 16px !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   box-shadow: 0 6px 14px rgba(17, 26, 46, 0.04) !important;
 }
@@ -16700,8 +16700,8 @@ body #page_paypal form#nonce-form.djep-payment-step-entry button.djep-actionbutt
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
-  background: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
-  background-image: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
+  background: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
+  background-image: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
   background-color: var(--djep-brand) !important;
   border: 1px solid rgb(from var(--djep-brand-dark) r g b / 0.24) !important;
   border-radius: 14px !important;
@@ -16711,7 +16711,7 @@ body #page_paypal form#nonce-form.djep-payment-step-entry button.djep-actionbutt
 }
 body #page_paypal form#nonce-form.djep-payment-step-entry #card-button:hover,
 body #page_paypal form#nonce-form.djep-payment-step-entry button.djep-actionbutton:hover {
-  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #d40d99 0%, #a30776 100%)) !important;
+  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #171717 0%, #242424 100%)) !important;
   box-shadow: var(--djep-button-shadow-hover, 0 16px 30px rgb(from var(--djep-brand) r g b / 0.32)) !important;
   transform: translateY(-1px) !important;
 }
@@ -16744,8 +16744,8 @@ body #page_paypal form#authorizeNet_paymentForm.djep-payment-step-entry #submit_
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
-  background: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
-  background-image: var(--djep-button-bg, linear-gradient(135deg, #c1098a 0%, #8e0666 100%)) !important;
+  background: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
+  background-image: var(--djep-button-bg, linear-gradient(135deg, #111111 0%, #2a2a2a 100%)) !important;
   background-color: var(--djep-brand) !important;
   border: 1px solid rgb(from var(--djep-brand-dark) r g b / 0.24) !important;
   border-radius: 14px !important;
@@ -16754,7 +16754,7 @@ body #page_paypal form#authorizeNet_paymentForm.djep-payment-step-entry #submit_
   transition: box-shadow 0.16s ease, transform 0.16s ease !important;
 }
 body #page_paypal form#authorizeNet_paymentForm.djep-payment-step-entry #submit_button:hover {
-  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #d40d99 0%, #a30776 100%)) !important;
+  background-image: var(--djep-button-bg-hover, linear-gradient(135deg, #171717 0%, #242424 100%)) !important;
   box-shadow: var(--djep-button-shadow-hover, 0 16px 30px rgb(from var(--djep-brand) r g b / 0.32)) !important;
   transform: translateY(-1px) !important;
 }
@@ -16773,10 +16773,10 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
   padding: 14px 16px;
   font-size: 13px;
   line-height: 1.55;
-  color: #667085;
+  color: #6f6f6f;
   background: #fafbfc;
-  border: 1px solid #e3e8f1;
-  border-left: 3px solid var(--djep-brand, #c1098a);
+  border: 1px solid #e5e5e5;
+  border-left: 3px solid var(--djep-brand, #111111);
   border-radius: 12px;
 }
 
@@ -16792,7 +16792,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
 .djep-square-altpanel {
   padding: 24px !important;
   background: var(--djep-surface, #ffffff) !important;
-  border: 1px solid var(--djep-border, #e3e8f1) !important;
+  border: 1px solid var(--djep-border, #e5e5e5) !important;
   border-radius: 18px !important;
   box-shadow: var(--djep-shadow-soft, 0 8px 20px rgba(17, 26, 46, 0.06)) !important;
 }
@@ -16803,7 +16803,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  color: #344054 !important;
+  color: #3a3a3a !important;
   background: none !important;
   border: 0 !important;
 }
@@ -16821,7 +16821,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
   height: 72px !important;
   padding: 10px 18px !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   text-decoration: none !important;
   transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
@@ -16835,7 +16835,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
   display: block !important;
 }
 .djep-paypage-altgateways > a.djep-paywithbutton:hover {
-  border-color: var(--djep-brand, #c1098a) !important;
+  border-color: var(--djep-brand, #111111) !important;
   box-shadow: 0 8px 18px rgb(from var(--djep-brand) r g b / 0.12) !important;
   transform: translateY(-1px) !important;
 }
@@ -16843,7 +16843,7 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
   display: block !important;
   padding: 18px !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 14px !important;
   text-align: center !important;
   margin-top: 0 !important;
@@ -16851,13 +16851,13 @@ body.djep-paymentpage-ready #page_paypal .djep-payment-warning-inline {
 .djep-square-altpanel .djep-payment-altlink-label {
   display: block !important;
   font-weight: 700 !important;
-  color: #101828 !important;
+  color: #111111 !important;
   margin-bottom: 4px !important;
 }
 .djep-square-altpanel .djep-payment-altcheck-address {
   display: block !important;
   font-size: 13px !important;
-  color: #667085 !important;
+  color: #6f6f6f !important;
 }
 @media (max-width: 900px) {
   .djep-square-workspace { grid-template-columns: minmax(0, 1fr) !important; }
@@ -16902,9 +16902,9 @@ body.djep-guestmusicpage-ready #add_your_own_song_helper_div textarea {
   margin: 0 !important;
   font-size: 15px !important;
   font-weight: 500 !important;
-  color: #101828 !important;
+  color: #111111 !important;
   background: #fff !important;
-  border: 1px solid var(--djep-border, #d8dfeb) !important;
+  border: 1px solid var(--djep-border, #dedede) !important;
   border-radius: 12px !important;
   box-shadow: 0 4px 10px rgba(17, 26, 46, 0.04) !important;
   outline: none !important;
@@ -16919,7 +16919,7 @@ body.djep-guestmusicpage-ready #add_your_own_song_helper_div textarea {
 }
 body.djep-guestmusicpage-ready #add_your_own_song_helper_div input:not([type=button]):not([type=submit]):not([type=reset]):focus,
 body.djep-guestmusicpage-ready #add_your_own_song_helper_div textarea:focus {
-  border-color: var(--djep-brand, #c1098a) !important;
+  border-color: var(--djep-brand, #111111) !important;
   box-shadow: 0 0 0 3px rgb(from var(--djep-brand) r g b / 0.15) !important;
 }
 
@@ -17046,14 +17046,14 @@ body.djep-planningformpage-ready #ep_form table[id^="planning_form_table_"] > tb
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #667085;
+    color: #6f6f6f;
   }
   /* Cells without a column label (row headings like "Client 1") read as
      bold section labels in the stacked view. */
   body.djep-planningformpage-ready #ep_form table[id^="planning_form_table_"] td table td:not([data-djep-matrix-label]),
   body.djep-planningformpage-ready #ep_form table[id^="planning_form_table_"] td table td[data-djep-matrix-label=""] {
     font-weight: 700 !important;
-    color: #243049 !important;
+    color: #303030 !important;
     padding-top: 12px !important;
   }
 }
@@ -17104,7 +17104,7 @@ body.djep-planningformpage-ready .djep-planningform-meta-card {
 }
 body.djep-timelinepage-ready .djep-timeline-timer,
 body.djep-planningformpage-ready .djep-planningform-timer {
-  color: #667085 !important;
+  color: #6f6f6f !important;
   font-size: 11px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
@@ -17195,7 +17195,7 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #98a2b3 !important;
+    color: #9b9b9b !important;
     font-size: 16px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
@@ -17267,7 +17267,7 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     padding: 12px !important;
     border: 1px solid rgba(216, 223, 235, 0.92) !important;
     border-radius: 14px !important;
-    background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%) !important;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
   }
   body.djep-timelinepage-ready .djep-timelinetable > tbody > tr:not(:has(.djep-sectiontitle)) > td {
     margin: 0 !important;
@@ -17294,9 +17294,9 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     font-size: 13px !important;
     font-weight: 600 !important;
     text-align: center !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     background: #f2f5f9 !important;
-    border: 1px solid #e3e8f1 !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 999px !important;
     box-sizing: border-box !important;
   }
@@ -17307,9 +17307,9 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     padding: 9px 12px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-    color: #101828 !important;
+    color: #111111 !important;
     background: #fff !important;
-    border: 1px solid #d8dfeb !important;
+    border: 1px solid #dedede !important;
     border-radius: 10px !important;
     box-sizing: border-box !important;
   }
@@ -17326,9 +17326,9 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     min-height: 56px !important;
     padding: 8px 10px !important;
     font-size: 13px !important;
-    color: #344054 !important;
+    color: #3a3a3a !important;
     background: #fff !important;
-    border: 1px solid #d8dfeb !important;
+    border: 1px solid #dedede !important;
     border-radius: 10px !important;
     box-sizing: border-box !important;
     font-family: inherit !important;
@@ -17363,9 +17363,9 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
     height: 34px !important;
     padding: 0 !important;
     font-size: 0 !important; /* hide label text */
-    color: #475467 !important;
+    color: #555555 !important;
     background: #f2f5f9 !important;
-    border: 1px solid #e3e8f1 !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 8px !important;
     cursor: pointer !important;
     font-family: inherit !important;
@@ -17386,7 +17386,203 @@ body.djep-planningformpage-ready .djep-planningform-toggle {
   body.djep-timelinepage-ready .djep-timeline-mobile-action.is-active,
   body.djep-timelinepage-ready .djep-timeline-mobile-action--notes[aria-pressed="true"] {
     background: rgb(from var(--djep-brand) r g b / 0.12) !important;
-    border-color: var(--djep-brand, #c1098a) !important;
-    color: var(--djep-brand, #c1098a) !important;
+    border-color: var(--djep-brand, #111111) !important;
+    color: var(--djep-brand, #111111) !important;
   }
 }
+
+/* ============================================================================
+   AVELLA PRODUCTIONS — BRAND OVERRIDES
+   ============================================================================ */
+
+:root {
+  --djep-brand: #111111;
+  --djep-brand-dark: #000000;
+  --djep-brand-soft: #f2f2f2;
+  --djep-nav-active: #111111;
+  --djep-button-bg-start: #0b0b0b;
+  --djep-button-bg-end: #2a2a2a;
+  --djep-button-bg-hover-start: #000000;
+  --djep-button-bg-hover-end: #171717;
+  --djep-banner-dark: #0a0a0a;
+  --djep-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --djep-font-heading: "DM Sans", "Inter", "Segoe UI", Arial, sans-serif;
+  --djep-page-bg: #f4f4f4;
+  --djep-surface: #ffffff;
+  --djep-surface-muted: #f7f7f7;
+  --djep-surface-strong: #efefef;
+  --djep-border: #dedede;
+  --djep-border-strong: #c9c9c9;
+  --djep-text: #262626;
+  --djep-text-muted: #6b6b6b;
+  --djep-heading: #111111;
+  --djep-nav-bg: #111111;
+  --djep-nav-text: #f5f5f5;
+}
+
+/* Black Avella logo artwork stays legible on a clean white desktop masthead. */
+#djep-header {
+  background: #ffffff !important;
+  border-color: #e2e2e2 !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08) !important;
+}
+
+#djep-header img {
+  filter: none !important;
+}
+
+/* Neutral brand accents. */
+.djep-h1::after,
+.djep-h2::after,
+.djep-h3::after {
+  background: linear-gradient(90deg, #111111 0%, rgba(17, 17, 17, 0.12) 100%) !important;
+}
+
+.calendar .month {
+  background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%) !important;
+}
+
+body.djep-body {
+  background:
+    radial-gradient(circle at top left, rgba(17, 17, 17, 0.045), transparent 28%),
+    radial-gradient(circle at top right, rgba(17, 17, 17, 0.035), transparent 30%),
+    linear-gradient(180deg, #f7f7f7 0%, #f1f1f1 100%) !important;
+}
+
+/* Primary buttons */
+.djep-actionbutton,
+.djep-widgetaction,
+.djep-paymentbutton,
+.djep-planeventbutton,
+input.djep-actionbutton,
+button.djep-actionbutton {
+  background-color: #111111 !important;
+  background-image: linear-gradient(135deg, #0b0b0b 0%, #2a2a2a 100%) !important;
+  border-color: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14) !important;
+}
+
+.djep-actionbutton:hover,
+.djep-widgetaction:hover,
+.djep-paymentbutton:hover,
+.djep-planeventbutton:hover,
+input.djep-actionbutton:hover,
+button.djep-actionbutton:hover {
+  background-color: #000000 !important;
+  background-image: linear-gradient(135deg, #000000 0%, #171717 100%) !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Home: financial context and alternate-payment note. */
+body.djep-homepage-ready .djep-home-event-payment-hint {
+  margin: 2px 2px 0 !important;
+  color: #737373 !important;
+  font-family: var(--djep-font-family) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  text-align: center !important;
+}
+
+body.djep-homepage-ready .djep-home-event-meta-item.is-payment-meta {
+  background: #f5f5f5 !important;
+  border-color: #d8d8d8 !important;
+}
+
+/* Real invoice due date: injected only when DJEP exposes one in the page. */
+body.djep-paymentpage-ready .djep-payment-due-date {
+  display: grid !important;
+  gap: 4px !important;
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid #e5e5e5 !important;
+}
+
+body.djep-paymentpage-ready .djep-payment-due-date-label {
+  color: #7a7a7a !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+body.djep-paymentpage-ready .djep-payment-due-date-value {
+  color: #111111 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* Avella does not accept checks through the client portal. */
+body.djep-paymentpage-ready #page_paypal .djep-payment-altcard--check,
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink--check,
+body.djep-paymentpage-ready #page_paypal .djep-payment-mailing,
+.djep-payment-alt-modal--check {
+  display: none !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink-label {
+  display: block !important;
+  color: #111111 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+body.djep-paymentpage-ready #page_paypal .djep-payment-altlink:hover {
+  border-color: #bdbdbd !important;
+  background: #f7f7f7 !important;
+  transform: translateY(-1px);
+}
+
+/* Defensive fallback: mailing address is not client-facing. */
+body.djep-contactpage-ready #djep-contactmail,
+body.djep-contactpage-ready #djep-contactmail + td,
+body.djep-contactpage-ready .djep-contact-info-item[data-djep-contact-kind="mail"] {
+  display: none !important;
+}
+
+/* Mobile navigation shell */
+.djep-force-mobile-shell__bar {
+  background: linear-gradient(180deg, #171717 0%, #0b0b0b 100%) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.20) !important;
+}
+
+.djep-force-mobile-shell__link {
+  color: #303030 !important;
+  border-color: #dedede !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+.djep-force-mobile-shell__link--active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%) !important;
+  border-color: #111111 !important;
+}
+
+/* Tighten mobile spacing without changing DJEP's working responsive DOM. */
+@media (max-width: 767px) {
+  #djep-page {
+    width: min(calc(100% - 20px), var(--djep-content-width)) !important;
+    padding-bottom: 34px !important;
+  }
+
+  #djep-content {
+    padding: 16px !important;
+    border-radius: 24px !important;
+  }
+
+  body.djep-homepage-ready .djep-home-event-shell {
+    padding: 16px !important;
+  }
+
+  body.djep-paymentpage-ready #page_paypal .djep-payment-panel,
+  body.djep-paymentpage-ready #page_paypal .djep-makepaymentbox.djep-payment-panel,
+  body.djep-paymentpage-ready #page_paypal .djep-payment-altbox.djep-payment-panel {
+    padding: 20px !important;
+    border-radius: 22px !important;
+  }
+}
+
