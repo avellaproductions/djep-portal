@@ -17896,3 +17896,27 @@ body.djep-paymentpage-ready #page_paypal.djep-retainer-payment-ready
     font-size: 19px;
   }
 }
+
+
+/* Mobile reliability: when the Pending state is applied asynchronously after
+   the welcome snippet has already rendered, force the milestone stack out. */
+html.djep-mobile-viewport body.djep-homepage-ready
+  .portal-welcome.is-pending-client .checklist-panel,
+body.djep-force-mobile-shell.djep-homepage-ready
+  .portal-welcome.is-pending-client .checklist-panel {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+html.djep-mobile-viewport body.djep-homepage-ready
+  .portal-welcome.is-pending-client .welcome-hero,
+body.djep-force-mobile-shell.djep-homepage-ready
+  .portal-welcome.is-pending-client .welcome-hero {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+}
